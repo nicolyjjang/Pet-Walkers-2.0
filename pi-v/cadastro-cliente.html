@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets Walkers</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Cabeçalho-->
+    <header>
+        <div class="logo">
+             <img src="./assets/images/logo.svg" alt="Logo">
+             <h2 class="titulo-logo">Pets Walkers</h2>
+        </div>
+ 
+        <div class="links">
+             <a href="home.html">Home</a>
+             <a href="sobre.html">Sobre</a>
+             <a href="servico.html">Serviços</a>
+             <a href="blog.html">Blog</a>
+             <a href="contato.html">Contato</a>
+        </div>
+        <button class="btn-iniciar"><a href="login.html">Log In</a></button>
+        <a href="pagamento.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
+     
+     </header>
+
+    <main>
+        <hr>
+        <section class="cadastro">
+            <h2 class="cadastro-titulo">Sign Up</h2>
+            <form>
+                <div id="um">
+                    <label class="cadastro-label" for="name">Tutor(a) *</label>
+                    <input class="cadastro-input" type="text" id="name" placeholder="Insira seu nome"><br>
+                    <label class="cadastro-label" for="email">E-mail *</label>
+                    <input class="cadastro-input" type="email" id="email" placeholder="email@gmail.com"><br>
+                    <label class="cadastro-label" for="pet1">Pet 1 *</label>
+                    <input class="cadastro-input" type="text" id="pet1" placeholder="Nome"><br>
+                    <label class="cadastro-label" for="idade">Idade *</label>
+                    <input class="cadastro-input" type="number" id="idade" aria-placeholder="00" placeholder="(00) 9 9999-9999">
+                    <p>+ Add pet</p>
+                </div>
+
+                <div id="dois">
+                    <label class="cadastro-label" for="cpf">CPF *</label>
+                    <input class="cadastro-input" type="number" id="cpf" placeholder="000000000-00"><br>
+                    <label class="cadastro-label" for="telefone">Telefone *</label>
+                    <input class="cadastro-input" type="number" id="telefone" placeholder="(00) 00000-0000"><br>
+                    <label class="cadastro-label" for="senha">Senha *</label>
+                    <input class="cadastro-input" type="password" id="senha" placeholder="********"><br>
+                    <label class="cadastro-label" for="endereco">Endereço</label>
+                    <input class="cadastro-input" type="text" id="endereco" placeholder="----------------"><br>
+                </div>
+            </form>
+            <div class="btn-container">
+                <button class="conteudo-btn6">Cancelar</button>
+                <button class="conteudo-btn6" onclick="cadastrar()">Cadastrar</button>
+            </div>
+            <p class="wrapper">* Campos de preenchimento obrigatório</p>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2023 - Todos os direitos reservados</p>
+        <nav>
+            <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
