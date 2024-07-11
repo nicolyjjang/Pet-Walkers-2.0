@@ -10,13 +10,27 @@ $("#formCadastro").validate({
     rules: {
         name: "required",
         email: "required",
-        telefone: "required"
+        telefone: "required",
+        cpf: "required",
+        senha: "required",
+        pet1: "required",
+        idade: "required",
+        endereco: "required"
     },
     messages: {
         name: "Favor preencher seu nome",
         email: "Favor preencher seu e-mail",
-        telefone: "Favor preencher seu telefone"
-    }
+        telefone: "Favor preencher seu telefone",
+        cpf: "Favor preencher seu cpf",
+        senha: "Favor preencher seu senha",
+        pet1: "Favor preencher seu pet1",
+        idade: "Favor preencher seu idade",
+        endereco: "Favor preencher seu endereco",
+    },
+    errorElement: "div",
+    errorPlacement: function(error, element) {
+        element.before(error);
+    }    
 });
 // Valida e Submete o formulário
 function enviar() {
@@ -37,6 +51,7 @@ function cadastrar() {
     const inputElementSenha = document.getElementById('senha');
     const inputElementPet1 = document.getElementById('pet1');
     const inputElementIdade = document.getElementById('idade');
+    const inputElementEndereco = document.getElementById('endereco');
 
     // Lê o valor do campo de entrada
     const inputValueName = inputElementName.value;
@@ -46,7 +61,8 @@ function cadastrar() {
     const inputValueSenha = inputElementSenha.value;
     const inputValuePet1 = inputElementPet1.value;
     const inputValueIdade = inputElementIdade.value;
-
+    const inputValueEndereco = inputElementEndereco.value;
+    
     const user = {
         nome_tutor: inputValueName,
         cpf: inputValueCpf,
@@ -54,7 +70,8 @@ function cadastrar() {
         email: inputValueEmail,
         senha: inputValueSenha,
         pet1: inputValuePet1,
-        idade: inputValueIdade
+        idade: inputValueIdade,
+        endereco: inputValueEndereco
     };
     //Chamada Axios para o Backend
     axios.post(apiUrl, user)

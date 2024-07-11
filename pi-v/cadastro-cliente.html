@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -41,31 +41,36 @@
             <form id="formCadastro" onsubmit="enviar()">
                 <div id="um">
                     <label class="cadastro-label" for="name">Tutor(a) *</label>
-                    <input class="cadastro-input" type="text" id="name" name="name" placeholder="Insira seu nome" required><br>
+                    <input class="cadastro-input" type="text" id="name" name="name" placeholder="Insira seu nome"
+                        required><br>
                     <label class="cadastro-label" for="email">E-mail *</label>
-                    <input class="cadastro-input" type="email" id="email" name="email" placeholder="email@gmail.com" required><br>
+                    <input class="cadastro-input" type="email" id="email" name="email" placeholder="email@gmail.com"
+                        required><br>
                     <label class="cadastro-label" for="pet1">Pet 1 *</label>
-                    <input class="cadastro-input" type="text" id="pet1" placeholder="Nome" required><br>
+                    <input class="cadastro-input" type="text" id="pet1" name="pet1" placeholder="Nome" required><br>
                     <label class="cadastro-label" for="idade">Idade *</label>
-                    <input class="cadastro-input" type="number" id="idade" aria-placeholder="00"
+                    <input class="cadastro-input" type="number" id="idade" name="idade" aria-placeholder="00"
                         placeholder="(00) 9 9999-9999" required>
                     <p>+ Add pet</p>
                 </div>
 
                 <div id="dois">
                     <label class="cadastro-label" for="cpf">CPF *</label>
-                    <input class="cadastro-input" type="number" id="cpf" placeholder="000000000-00" required><br>
-                    <label class="cadastro-label" for="telefone" >Telefone *</label>
-                    <input class="cadastro-input" type="number" id="telefone"  name="telefone"  placeholder="(00) 00000-0000"
+                    <input class="cadastro-input" type="number" name="cpf" id="cpf" placeholder="000000000-00"
                         required><br>
+                    <label class="cadastro-label" for="telefone">Telefone *</label>
+                    <input class="cadastro-input" type="number" id="telefone" name="telefone"
+                        placeholder="(00) 00000-0000" required><br>
                     <label class="cadastro-label" for="senha">Senha *</label>
-                    <input class="cadastro-input" type="password" id="senha" placeholder="********" required><br>
+                    <input class="cadastro-input" type="password" id="senha" name="senha" placeholder="********"
+                        required><br>
                     <label class="cadastro-label" for="endereco">Endereço</label>
-                    <input class="cadastro-input" type="text" id="endereco" placeholder="----------------"><br>
+                    <input class="cadastro-input" type="text" id="endereco" name="endereco"
+                        placeholder="----------------"><br>
                 </div>
                 <div class="btn-container">
                     <button class="conteudo-btn6" id="btnCancelar" onclick="cancelar()">Cancelar</button>
-                    <input class="conteudo-btn6" id="btnCadastar" type="submit" value="Cadastrar"/>
+                    <input class="conteudo-btn6" id="btnCadastar" type="submit" value="Cadastrar" />
                 </div>
             </form>
             <p class="wrapper">* Campos de preenchimento obrigatório</p>
@@ -84,8 +89,9 @@
         </nav>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>   
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script src="js/cliente.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
+
 </html>

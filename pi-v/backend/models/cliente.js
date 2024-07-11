@@ -44,10 +44,15 @@ const Cliente = db.define('clientes',{
     idade:{
         type: Sequelize.INTEGER,
         allowNull:false
-    }
+    },
+    endereco:{
+        type: Sequelize.STRING,
+        allowNull:true
+    },    
+
 })
 
 // Criar a tabela
-db.sync();
+db.sync({ alter: true });
 
 module.exports = Cliente;
