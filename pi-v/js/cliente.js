@@ -29,7 +29,7 @@ $("#formCadastro").validate({
     },
     errorElement: "div",
     errorPlacement: function(error, element) {
-        element.before(error);
+        element.before(error);     
     }    
 });
 // Valida e Submete o formulário
@@ -77,9 +77,12 @@ function cadastrar() {
     axios.post(apiUrl, user)
         .then(response => {
             console.log(response.data); // Resposta do servidor
-            console.log("Dados Enviados com Sucesso")
+            alert("Dados Enviados com Sucesso");
         })
+        .then(()=>{
+            location.reload();
+        }) 
         .catch(error => {
-            console.log('Erro ao fazer a requisição:', error);
+            alert('Erro ao fazer a requisição:', error);
         });
 }

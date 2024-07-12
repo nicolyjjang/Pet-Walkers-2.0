@@ -570,7 +570,7 @@ h5{
 .cadastro{
     background-image: url("../assets/images/bolinhas.svg");
     margin-top: 50px;
-    height: 500px;
+    /* height: 500px; */
 }
 
 #um{
@@ -842,3 +842,8 @@ label {
     font-size: 40px;
     font-weight: 500;
 }
+.error_div{
+    width: 100%;
+    text-align: center;
+}
+    
