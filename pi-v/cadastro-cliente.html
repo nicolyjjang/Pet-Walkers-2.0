@@ -38,7 +38,7 @@
         <hr>
         <section class="cadastro">
             <h2 class="cadastro-titulo">Sign Up</h2>
-            <form id="formCadastro" onsubmit="enviar()">
+            <form id="formCadastro">
                 <div id="um">
                     <label class="cadastro-label" for="name">Tutor(a) *</label>
                     <input class="cadastro-input" type="text" id="name" name="name" placeholder="Insira seu nome"
@@ -69,8 +69,8 @@
                         placeholder="----------------"><br>
                 </div>
                 <div class="btn-container">
-                    <button class="conteudo-btn6" id="btnCancelar" onclick="cancelar()">Cancelar</button>
-                    <input class="conteudo-btn6" id="btnCadastar" type="submit" value="Cadastrar" />
+                    <button class="cancel conteudo-btn6" id="btnCancelar">Cancelar</button>
+                    <button class="conteudo-btn6" id="btnCadastar">Cadastrar</button>
                 </div>
             </form>
             <p class="wrapper">* Campos de preenchimento obrigatório</p>

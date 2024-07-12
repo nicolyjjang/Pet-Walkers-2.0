@@ -1,12 +1,14 @@
 const baseUrl = 'http://localhost:8080'; 
 var apiUrl = `${baseUrl}/cliente`;
 var form = $("#formCadastro");
-// Impede o comportamento padrao do formulário de submit
-document.getElementById('formCadastro').addEventListener('submit', function (event) {
-    event.preventDefault();
-});
-// Jquery para validar conteudo do formulário apos o submit
-$("#formCadastro").validate({
+document.getElementById('btnCancelar').addEventListener('click', function(e){
+    e.preventDefault(); // Impedir o comportamento padrao de recarregar do formulario
+    cancelar();
+})
+document.getElementById('btnCadastar').addEventListener('click', function(e){
+  e.preventDefault();
+  // Jquery para validar conteudo do formulário apos o submit
+  $("#formCadastro").validate({
     rules: {
         name: "required",
         email: "required",
@@ -22,9 +24,9 @@ $("#formCadastro").validate({
         email: "Favor preencher seu e-mail",
         telefone: "Favor preencher seu telefone",
         cpf: "Favor preencher seu cpf",
-        senha: "Favor preencher seu senha",
+        senha: "Favor preencher sua senha",
         pet1: "Favor preencher seu pet1",
-        idade: "Favor preencher seu idade",
+        idade: "Favor preencher sua idade",
         endereco: "Favor preencher seu endereco",
     },
     errorElement: "div",
@@ -32,6 +34,9 @@ $("#formCadastro").validate({
         element.before(error);     
     }    
 });
+enviar();
+}, false);
+
 // Valida e Submete o formulário
 function enviar() {
     if (form.valid()) {
