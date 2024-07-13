@@ -1,9 +1,7 @@
 const Walker = require('../models/walker');
 
-
 const postWalker = async (req, res) => {
     try {
-        console.log(req.body)
         const { nome_tutor, cpf, telefone, email, senha, endereco } = req.body;
 
         // Crie um novo registro de Walker

@@ -19,7 +19,7 @@ document.getElementById('btnCadastar').addEventListener('click', function(e){
     },
     messages: {
         name: "Favor preencher seu nome",
-        email: "Favor preencher seu e-mail",
+        email: "Favor preencher seu e-mail corretamente",
         telefone: "Favor preencher seu telefone",
         cpf: "Favor preencher seu cpf",
         senha: "Favor preencher sua senha",

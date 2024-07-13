@@ -32,12 +32,10 @@ function chamarRotas() {
     // Importe o arquivo de rotas do Cadastro de Clientes
     const clienteRoutes = require('./routes/cliente.js');
     const walkerRoutes = require('./routes/walker.js');
-
+    const loginRoutes = require('./routes/login.js');
 
     // Use as rotas definidas no arquivo cliente.js
     app.use(clienteRoutes);
     app.use(walkerRoutes);
-
-
-
+    app.use(loginRoutes);
 }
