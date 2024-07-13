@@ -6,11 +6,11 @@ const getCliente = async (req, res) => {
 
 const postCliente = async (req, res) => {
     try {
-        const { nome_tutor, cpf, telefone, sexo, email, senha, pet1, pet2, idade, endereco } = req.body;
+        const { nome_cliente, cpf, telefone, sexo, email, senha, pet1, pet2, idade, endereco } = req.body;
 
-        // Crie um novo registro de usuário
-        const newUser = await Cliente.create({
-            nome_tutor,
+        // Crie um novo registro de Cliente
+        const newCliente = await Cliente.create({
+            nome_cliente,
             cpf,
             telefone,
             sexo,
@@ -22,10 +22,10 @@ const postCliente = async (req, res) => {
             endereco
         });
 
-        res.status(201).json(newUser); // Retorne o novo usuário criado
+        res.status(201).json(newCliente); // Retorne o novo Cliente criado
     } catch (error) {
-        console.error('Erro ao criar usuário:', error);
-        res.status(500).json({ error: 'Erro ao criar usuário' });
+        console.error('Erro ao criar Cliente:', error);
+        res.status(500).json({ error: 'Erro ao criar Cliente' });
     }
 };
 

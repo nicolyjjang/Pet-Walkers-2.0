@@ -25,14 +25,19 @@ if (nodeEnv === ('local')) {
 }else{
     chamarRotas();
 }
+app.listen(8080, () => {
+    console.log("Servidor iniciado na porta 8080: https://localhost:8080");
+});
 function chamarRotas() {
     // Importe o arquivo de rotas do Cadastro de Clientes
     const clienteRoutes = require('./routes/cliente.js');
+    const walkerRoutes = require('./routes/walker.js');
+
 
     // Use as rotas definidas no arquivo cliente.js
     app.use(clienteRoutes);
+    app.use(walkerRoutes);
 
-    app.listen(8080, () => {
-        console.log("Servidor iniciado na porta 8080: https://localhost:8080");
-    });
+
+
 }
