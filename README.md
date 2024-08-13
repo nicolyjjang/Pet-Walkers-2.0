@@ -1,4 +1,9 @@
 # Página Web Pet Walkers 🐾
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white" alt="HTML" width="100" height="auto"></a>
+  <a href="#"><img src="https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff" alt="CSS" width="90" height="auto"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" width="100" height="auto"></a>
+</p>
 
 ## Descrição 📜
 O **Pet Walkers** é um projeto desenvolvido como parte de um trabalho universitário. O objetivo é criar uma plataforma digital que conecta tutores de pets a cuidadores qualificados para passeios e exercícios físicos. O projeto visa proporcionar uma experiência segura, divertida e enriquecedora para os pets, enquanto oferece praticidade e tranquilidade aos tutores ocupados.
@@ -48,8 +53,29 @@ O sistema é composto pelos seguintes componentes:
 - **Backend**: 
 - **Banco de Dados**: 
 
-## Colaboradores 🫱🏽‍🫲🏼
-* Antenor Pereira dos Santos
-* Lívia Yuri Tanaka Castilho
-* Marina Augusto de Moraes
-* Nicoly de Jesus Jang
+### Colaboradores 🫱🏽‍🫲🏼
+
+<table align="center">
+  <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/145237759?v=4" alt="Antenor Pereira dos Santos" style="width: 100px; height: 100px; border-radius: 50%;" />
+      <br />
+      Antenor Pereira dos Santos
+    </td>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/145172974?v=4" alt="Lívia Yuri Tanaka Castilho" style="width: 100px; height: 100px; border-radius: 50%;" />
+      <br />
+      Lívia Yuri Tanaka Castilho
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/107158277?s=400&u=05ecc01dd6fc7115310d2d5a8d61c79f082f4ab7&v=4" alt="Nicoly de Jesus Jang" style="width: 100px; height: 100px; border-radius: 50%;" />
+      <br />
+      Nicoly de Jesus Jang
+    </td>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/123497104?v=4" alt="Marina Augusto de Moraes" style="width: 100px; height: 100px; border-radius: 50%;" />
+      <br />
+      Marina Augusto de Moraes
+    </td>
+</table>
