@@ -1,4 +1,4 @@
-# Página Web Pet Walkers
+# Página Web Pet Walkers 🐾
 
 ## Descrição
 O **Pet Walkers** é um projeto desenvolvido como parte de um trabalho universitário. O objetivo é criar uma plataforma digital que conecta tutores de pets a cuidadores qualificados para passeios e exercícios físicos. O projeto visa proporcionar uma experiência segura, divertida e enriquecedora para os pets, enquanto oferece praticidade e tranquilidade aos tutores ocupados.
@@ -17,11 +17,13 @@ Aqui estão algumas capturas de tela do aplicativo em uso:
 
 ![Tela de Pagamento]!![Captura de tela 2024-08-13 105900](https://github.com/user-attachments/assets/818726ca-b2f1-4a42-970a-ad9068aec24f)
 
+## Instalação e Execução ⚙️
+[COMO UTILIZAR/USAR O MVP - O BACK]
 
-## Requisitos de sistema
+## Requisitos de sistema 🖥️
 * Sistema desktop ou móvel básico
 
-## Funcionalidades Principais
+## Funcionalidades Principais 🛠️
 * Cadastro de Usuário: Tutores e cuidadores podem se cadastrar na plataforma preenchendo um formulário com informações básicas.
 * Pesquisa e Seleção: Tutores podem pesquisar e selecionar cuidadores com base em critérios como localização, disponibilidade e avaliações de outros usuários.
 * Agendamento de Passeios: Tutores podem agendar passeios e exercícios físicos para seus pets com os cuidadores selecionados.
@@ -29,7 +31,7 @@ Aqui estão algumas capturas de tela do aplicativo em uso:
 * Pagamento: Tutores podem efetuar pagamentos pelos serviços contratados utilizando um sistema de pagamento seguro, aceitando apenas cartões de crédito.
 
 
-## Mais informações ℹ️
+## Mais informações 🔗
 ### Link do Prototipo
 * Para melhor abstração e visualização dos Protótipos que foram desenvolvidos no FIGMA:
 
@@ -42,7 +44,7 @@ O sistema é composto pelos seguintes componentes:
 - **Backend**: Construído com Node.js e Express.
 - **Banco de Dados**: Utiliza MySQL para armazenamento de dados.
 
-## Colaboradores 👩🏻‍💻
+## Colaboradores 🫱🏽‍🫲🏼
 * Antenor Pereira dos Santos
 * Lívia Yuri Tanaka Castilho
 * Marina Augusto de Moraes
