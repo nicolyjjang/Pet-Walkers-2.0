@@ -1,12 +1,12 @@
 # Página Web Pet Walkers 🐾
 
-## Descrição
+## Descrição 📜
 O **Pet Walkers** é um projeto desenvolvido como parte de um trabalho universitário. O objetivo é criar uma plataforma digital que conecta tutores de pets a cuidadores qualificados para passeios e exercícios físicos. O projeto visa proporcionar uma experiência segura, divertida e enriquecedora para os pets, enquanto oferece praticidade e tranquilidade aos tutores ocupados.
 
-## Visão Geral
+## Visão Geral 🌟
 A plataforma oferece uma série de funcionalidades que incluem o cadastro de usuários, pesquisa e seleção de cuidadores, agendamento de passeios, avaliações e um sistema de pagamento seguro. Com um design intuitivo e uma interface amigável, a Pet Walkers se destaca pela eficiência e facilidade de uso.
 
-## Capturas de Tela e Demonstração
+## Capturas de Tela e Demonstração 📸
 Aqui estão algumas capturas de tela do aplicativo em uso:
 
 ![Tela de Login]![Captura de tela 2024-08-13 105020](https://github.com/user-attachments/assets/2b4e07ce-765e-4855-8167-cfadf147c9a8)
