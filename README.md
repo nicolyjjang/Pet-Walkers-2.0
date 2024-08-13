@@ -33,7 +33,8 @@ Aqui estão algumas capturas de tela do aplicativo em uso:
 ### Link do Prototipo
 * Para melhor abstração e visualização dos Protótipos que foram desenvolvidos no FIGMA:
 
-Clique aqui para acessar (requer cadastro no FIGMA)[https://www.figma.com/design/aXU1wVdHDUHJc27WbSaT5K/Untitled?node-id=0-1&t=Cl6PrtSZ818R5JIA-1]
+[**Clique aqui para acessar (requer cadastro no FIGMA)**](https://www.figma.com/design/aXU1wVdHDUHJc27WbSaT5K/Untitled?node-id=0-1&t=Cl6PrtSZ818R5JIA-1)
+
 
 ## Arquitetura do Sistema 💻
 O sistema é composto pelos seguintes componentes:
