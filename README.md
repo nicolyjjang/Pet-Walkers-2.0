@@ -7,15 +7,19 @@ O **Pet Walkers** é um projeto desenvolvido como parte de um trabalho universit
 A plataforma oferece uma série de funcionalidades que incluem o cadastro de usuários, pesquisa e seleção de cuidadores, agendamento de passeios, avaliações e um sistema de pagamento seguro. Com um design intuitivo e uma interface amigável, a Pet Walkers se destaca pela eficiência e facilidade de uso.
 
 ## Capturas de Tela e Demonstração 📸
-Aqui estão algumas capturas de tela do aplicativo em uso:
+Aqui estão algumas capturas de tela que ilustram as principais telas da plataforma:
 
-![Tela de Login]![Captura de tela 2024-08-13 105020](https://github.com/user-attachments/assets/2b4e07ce-765e-4855-8167-cfadf147c9a8)
+### Tela de Login
+![Tela de Login](https://github.com/user-attachments/assets/2b4e07ce-765e-4855-8167-cfadf147c9a8)
 
-![Tela de Cadastro de Walker]![Captura de tela 2024-08-13 105040](https://github.com/user-attachments/assets/8c901f7c-821a-49ba-bdab-29c05729aaa0)
+### Tela de Cadastro de Walker
+![Tela de Cadastro de Walker](https://github.com/user-attachments/assets/8c901f7c-821a-49ba-bdab-29c05729aaa0)
 
-![Tela de Home]![Captura de tela 2024-08-13 105329](https://github.com/user-attachments/assets/f73c51a1-95a8-419e-98e5-3034ef020949)
+### Tela de Home
+![Tela de Home](https://github.com/user-attachments/assets/f73c51a1-95a8-419e-98e5-3034ef020949)
 
-![Tela de Pagamento]!![Captura de tela 2024-08-13 105900](https://github.com/user-attachments/assets/818726ca-b2f1-4a42-970a-ad9068aec24f)
+### Tela de Pagamento
+![Tela de Pagamento](https://github.com/user-attachments/assets/818726ca-b2f1-4a42-970a-ad9068aec24f)
 
 ## Instalação e Execução ⚙️
 [COMO UTILIZAR/USAR O MVP - O BACK]
