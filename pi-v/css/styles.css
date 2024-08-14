@@ -846,4 +846,7 @@ label {
     width: 100%;
     text-align: center;
 }
-    
+.divError{
+    font-weight: bold;
+    color: red;
+}    

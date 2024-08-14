@@ -44,14 +44,15 @@
                 <i class="fa-brands fa-linkedin"></i>
                 <i class="fa-brands fa-whatsapp"></i>
             </div>
-            <form class="formulario-contatos">
-                <input type="text" placeholder="Nome">
-                <input type="number" placeholder="Telefone">
-                <input type="email" placeholder="E-mail">
-                <input type="text" placeholder="Endereço">
-                <textarea name="mensagem" id="" cols="30" rows="10" placeholder="Mensagem"></textarea>
+            <div id="divError" class="divError"></div>
+            <form class="formulario-contatos" id="formContato">
+                <input type="text" placeholder="Nome" id="name" name="name"/>
+                <input type="number" placeholder="Telefone" id="telefone" name="telefone"/>
+                <input type="email" placeholder="E-mail" id="email" name="email"/>
+                <input type="text" placeholder="Endereço" id="endereco" name="endereco"/>
+                <textarea name="message"  cols="30" rows="10" placeholder="Mensagem" id="message" ></textarea>
             </form> 
-            <button class="conteudo-btn4">Enviar mensagem</button>
+            <button class="conteudo-btn4"id="btnEnviar">Enviar mensagem</button>
         </section>
 
         <section class="mapa">
@@ -84,5 +85,9 @@
 		</ul>
 	</nav>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="js/contato.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>    
 </body>
 </html>

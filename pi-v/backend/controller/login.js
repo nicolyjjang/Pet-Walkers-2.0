@@ -5,7 +5,6 @@ const { QueryTypes } = require('sequelize');
 const postLogin = async (req, res) => {
     try {
         const { email, senha } = req.body;
-        console.log(req.body)
         const query = 'SELECT COUNT(*) AS total FROM (SELECT nome_cliente FROM clientes WHERE email = :email and senha = :senha UNION SELECT nome_tutor FROM walkers  WHERE email = :email and senha = :senha) as UNIAO';
 
         const [resultados] = await sequelize.query(query, {
