@@ -33,7 +33,7 @@
      
      </header>
 
-    <main>
+     <main>
         <hr>
         <section class="login">
             <div class="login-escrito">
@@ -44,21 +44,49 @@
                 <input class="input-mini" type="email" id="email" name="email" placeholder="E-mail" required>
                 <label class="label-mini2" for="senha">Senha *</label>
                 <input class="input-mini" type="password" id="senha" name="senha"placeholder="Senha" required><br>
+    
+                <label for="user-type">Você é:</label><br>
+                <input type="radio" id="cliente" name="user-type" value="cliente">
+                <label for="cliente">Cliente</label>
+                <input type="radio" id="walker" name="user-type" value="walker">
+                <label for="walker">Walker</label><br>
+                
                 <a href="#"><strong>Esqueceu sua senha?</strong></a><br>
                 <button class="conteudo-btn" id="btnEntrar">Entrar</button><br>
                 <a href="cadastro.html">Criar uma conta</a>
+    
                 <div class="botoes">
                     <button class="btn-login"><a href="cadastro-walker.html">Walker</a></button>
                     <button class="btn-login"><a href="cadastro-cliente.html">Cliente</a></button>
                 </div>
+                
                 <p>* campos obrigatórios</p>
             </form>
             <p>Ao fazer login na Pets Walkers você concorda com nossos Termos de uso e Política de Privacidade</p>
         </section>
     </main>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // impede o envio padrão do formulário
+            
+            // coleta os dados do formulário
+            const tipo = document.getElementById('tipo').value;
+            
+            // define a URL para redirecionamento
+            let url;
+            if (tipo === 'cliente') {
+                url = 'informacoes-pessoais-clientes.html'; 
+            } else if (tipo === 'walker') {
+                url = 'informacoes-pessoais-walkers.html'; 
+            }
+            
+            window.location.href = url;
+        });
+    </script>
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2023 - Todos os direitos reservados</p>
+        <p>&copy; 2024 - Todos os direitos reservados</p>
 	<nav>
 		<ul>
 			<li><a href="#">Termos de uso</a></li>
