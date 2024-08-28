@@ -813,29 +813,11 @@ input#cvv {
 }
 
 .tipo-pagamento {
-    accent-color: #6dbf56;
-    color: #797979;
     margin-left: 5px;
     height: 20px;
     width: 20px;
-    vertical-align: middle;
     margin-right: 5px; 
     text-align: center;
-}
-
-/* Radio Button Container */
-.form-group-radio {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    vertical-align: middle;
-}
-
-.form-group-radio label {
-    margin: 0;
-    font-size: 14px;
-    font-weight: normal;
-    color: #797979;
 }
 
 .pagamento-salvo {
@@ -845,7 +827,6 @@ input#cvv {
     gap: 10px; 
     max-width: 100px;
 }
-
 
 .pagamento-salvo label {
     font-size: 16px;
