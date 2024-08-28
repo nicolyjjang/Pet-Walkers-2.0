@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informações Pessoais - Pets Walkers</title>
+    <title>Histórico de Passeios - Pets Walkers</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
 
-    <script src="./js/index.js"></script>
-
+    <script src="./js/historico-passeios.js" defer></script> <!-- Inclua o script para preencher a tabela -->
 </head>
 
 <body>
@@ -50,35 +49,25 @@
         <nav class="sidebar-nav">
             <a href="informacoes-pessoais-walker.html">Informações Pessoais</a>
             <a href="disponibilidade.html">Disponibilidade</a>
-            <a href="historico-passeios.html">Histórico de Passeios</a>
+            <a href="historico-passeios-walker.html">Histórico de Passeios</a>
         </nav>
     </div>
-    <main class="informacoes">
-        <h1>Informações Pessoais</h1>
-        <form id="personal-info-form">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required autocomplete="name">
-            
-            <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf" required autocomplete="cpf">
-            
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required autocomplete="email">
-            
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" autocomplete="tel">
-            
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required autocomplete="new-password">
-            
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" autocomplete="address">
-            
-            <label for="disponibilidade">Disponibilidade:</label>
-            <input type="text" id="disponibilidade" name="disponibilidade" autocomplete="off">
 
-            <button type="submit">Atualizar Informações</button>
-        </form>
+    <main class="informacoes-walker">
+        <h1>Histórico de Passeios</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Horário</th>
+                    <th>Cliente</th>
+                    <th>Tipo de Passeio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- as linhas da tabela serão inseridas aqui - pelo js -->
+            </tbody>
+        </table>
     </main>
 
     <!-- Rodapé -->
@@ -95,4 +84,5 @@
     </footer>
 
 </body>
+
 </html>

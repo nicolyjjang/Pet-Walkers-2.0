@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Pets Walkers</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // redireciona após 2 segundos -> para página principal
+            setTimeout(function() {
+                window.location.href = 'home.html'; 
+            }, 2000);
+        });
+    </script>
+    
+</head>
+<body>
+    <main>
+        <section class="Logout">
+            <h1>Você foi desconectado</h1>
+            <p>Você será redirecionado para a página inicial em breve.</p>
+            <img src="./assets/images/dog high five-bro.svg" alt="cachorro fazendo um high five com seu dono">
+            <a href="https://storyset.com/people"><i>People illustrations by Storyset</i></a>
+        </section>
+    </main>
+</body>
+</html>

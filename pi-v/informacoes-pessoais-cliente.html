@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
+
+    <script src="./js/index.js"></script>
+
 </head>
 
 <body>
@@ -30,7 +33,7 @@
             <a href="contato.html">Contato</a>
         </div>
         <button class="btn-iniciar"><a href="login.html">Log In</a></button>
-        <a href="pagamento.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
+        <a href="carrinho.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
     </header>
 
     <div class="header-container">
@@ -101,59 +104,5 @@
         </nav>
     </footer>
 
-
-    <script>
-       // simular carregamento de dados
-        function carregarDadosCliente() {
-            // simulacao backend
-            const cliente = {
-                nome: "Nome do Cliente",
-                email: "email@cliente.com",
-                cpf: "000.000.000-00",
-                telefone: "(00) 00000-0000",
-                endereco: "Rua Exemplo, 123",
-                pets: [
-                    { nome: "Nome do Pet 1", idade: "Idade do Pet 1" },
-                    { nome: "Nome do Pet 2", idade: "Idade do Pet 2" }
-                ]
-            };
-
-            // atualizar dados -> sidebar e formulário
-            document.getElementById('profile-name').textContent = cliente.nome;
-            document.getElementById('profile-email').textContent = cliente.email;
-            document.getElementById('nome').value = cliente.nome;
-            document.getElementById('cpf').value = cliente.cpf;
-            document.getElementById('email').value = cliente.email;
-            document.getElementById('telefone').value = cliente.telefone;
-            document.getElementById('endereco').value = cliente.endereco;
-
-            // pets formulario
-            cliente.pets.forEach((pet, index) => {
-                if (index < 1) {
-                    document.getElementById(`pet${index + 1}`).value = pet.nome;
-                    document.getElementById(`idade${index + 1}`).value = pet.idade;
-                }
-            });
-        }
-
-        // dados na pagina
-        window.onload = carregarDadosCliente;
-        
-        let petCount = 1;
-        document.getElementById('add-pet-btn').addEventListener('click', function() {
-            petCount++;
-            const petsContainer = document.getElementById('pets');
-            const newPetGroup = document.createElement('div');
-            newPetGroup.className = 'pet-group';
-            newPetGroup.innerHTML = `
-                <label for="pet${petCount}">Nome do Pet ${petCount}:</label>
-                <input type="text" id="pet${petCount}" name="pet${petCount}" readonly>
-                
-                <label for="idade${petCount}">Idade do Pet ${petCount}:</label>
-                <input type="text" id="idade${petCount}" name="idade${petCount}" readonly>
-            `;
-            petsContainer.appendChild(newPetGroup);
-        });
-    </script>
 </body>
 </html>

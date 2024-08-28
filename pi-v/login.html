@@ -6,34 +6,34 @@
     <title>Pets Walkers</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
+    <script src="./js/index.js" defer></script> <!-- Adicione defer para garantir que o script carregue após o HTML -->
 </head>
 <body>
     <!-- Cabeçalho-->
     <header>
         <div class="logo">
-             <img src="./assets/images/logo.svg" alt="Logo">
-             <h2 class="titulo-logo">Pets Walkers</h2>
+            <img src="./assets/images/logo.svg" alt="Logo">
+            <h2 class="titulo-logo">Pets Walkers</h2>
         </div>
- 
-        <div class="links">
-             <a href="home.html">Home</a>
-             <a href="sobre.html">Sobre</a>
-             <a href="servico.html">Serviços</a>
-             <a href="blog.html">Blog</a>
-             <a href="contato.html">Contato</a>
-        </div>
-        <button  class="btn-iniciar"><a href="login.html">Log In</a></button>
-        <a href="pagamento.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
-     
-     </header>
 
-     <main>
+        <div class="links">
+            <a href="home.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="servico.html">Serviços</a>
+            <a href="blog.html">Blog</a>
+            <a href="contato.html">Contato</a>
+        </div>
+        <button class="btn-iniciar"><a href="login.html">Log In</a></button>
+        <a href="carrinho.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
+    </header>
+
+    <main>
         <hr>
         <section class="login">
             <div class="login-escrito">
@@ -41,10 +41,10 @@
             </div>
             <div class="mini-formulario"> 
                 <label class="label-mini" for="email">E-mail *</label>
-                <input class="input-mini" type="email" placeholder="E-mail" required>
+                <input id="email" class="input-mini" type="email" placeholder="E-mail" required>
                 <label class="label-mini2" for="senha">Senha *</label>
-                <input class="input-mini" type="password" placeholder="Senha" required><br>
-    
+                <input id="senha" class="input-mini" type="password" placeholder="Senha" required><br>
+
                 <label for="user-type">Você é:</label><br>
                 <input type="radio" id="cliente" name="user-type" value="cliente">
                 <label for="cliente">Cliente</label>
@@ -52,9 +52,9 @@
                 <label for="walker">Walker</label><br>
                 
                 <a href="#"><strong>Esqueceu sua senha?</strong></a><br>
-                <button class="conteudo-btn">Entrar</button><br>
+                <button id="login-btn" class="conteudo-btn">Entrar</button><br>
                 <a href="cadastro.html">Criar uma conta</a>
-    
+
                 <div class="botoes">
                     <button class="btn-login"><a href="cadastro-walker.html">Walker</a></button>
                     <button class="btn-login"><a href="cadastro-cliente.html">Cliente</a></button>
@@ -66,36 +66,17 @@
         </section>
     </main>
     
-
-    <script>
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // impede o envio padrão do formulário
-            
-            // coleta os dados do formulário
-            const tipo = document.getElementById('tipo').value;
-            
-            // define a URL para redirecionamento
-            let url;
-            if (tipo === 'cliente') {
-                url = 'informacoes-pessoais-clientes.html'; 
-            } else if (tipo === 'walker') {
-                url = 'informacoes-pessoais-walkers.html'; 
-            }
-            
-            window.location.href = url;
-        });
-    </script>
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 - Todos os direitos reservados</p>
-	<nav>
-		<ul>
-			<li><a href="#">Termos de uso</a></li>
-			<li><a href="#">Política de privacidade</a></li>
-			<li><a href="#">Sobre nós</a></li>
-			<li><a href="#">Contato</a></li>
-		</ul>
-	</nav>
+        <nav>
+            <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
     </footer>
 </body>
 </html>

@@ -279,6 +279,11 @@ a{
 }
 
 /* Conteúdo Sobre */
+.titulo-sobre{
+    font-size: 20px;
+    line-height: 50px;
+}
+
 .conteudo-sobre {
     display: flex;
     flex-direction: row;
@@ -302,15 +307,21 @@ a{
 
 .servico-titulo {
     font-size: 24px;
+    text-align: center;
+    margin-top: 100px;
 }
 
 .servico-palavra {
     font-size: 20px;
 }
 
+.conteudo-servicos img{
+    width: 500px;
+}
+
 .conteudo-servicos-escrito {
     width: 600px;
-    margin-left: -100px; /* Verifique se isso é necessário */
+    margin-left: -100px; 
 }
 
 .conteudo-btn2 {
@@ -747,14 +758,14 @@ a{
     margin: 0; 
 }
 
-/* Pagamento */
+/* Carrinho */
 .pagamento {
     margin-left: 300px;
     line-height: 30px;
 }
 
 .pagamento hr {
-    width: 500px;
+    width: 600px;
     margin-bottom: 15px;
 }
 
@@ -899,19 +910,38 @@ select {
 
 .pagamento-resumo hr {
     margin-left: 10px;
-    width: 450px;
+    width: 500px;
     margin-bottom: 30px;
     margin-top: 10px;
 }
 
 .resumo {
     display: flex;
+    flex-wrap: wrap; 
 }
 
 .resumo-texto {
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#servicos-selecionados {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    padding: 0;
+    margin-left: 50px; 
+}
+
+/* Estilo dos itens de serviço */
+#servicos-selecionados > * {
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .resumo-preco {
@@ -946,7 +976,7 @@ select {
     box-shadow: 4px 5px 4px 0px #00000040;
     border-radius: 5px;
     font-size: 20px;
-    background-color: #ACACAC;
+    background-color: #8abf63;
     color: #ffffff;
     cursor: pointer;
     margin-bottom: 30px;
@@ -957,6 +987,21 @@ select {
 .conteudo-btn6:hover {
     background-color: #6DBF56;
     transition: 0.5s;
+}
+
+
+.btn-remover {
+    background-color: #ff4d4d; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    margin-left: 10px; 
+    cursor: pointer; 
+}
+
+.btn-remover:hover {
+    background-color: #cc0000; 
 }
 
 .resumo-preco2 {
@@ -1099,11 +1144,11 @@ input[type="email"],
 input[type="tel"],
 input[type="password"],
 input[type="number"] {
-    color: #333; /* Altere para a cor desejada */
-    border: 1px solid #ccc; /* Altere para a borda desejada */
-    padding: 8px; /* Adapte o padding conforme necessário */
-    border-radius: 4px; /* Adapte o border-radius conforme necessário */
-    font-size: 16px; /* Adapte o tamanho da fonte conforme necessário */
+    color: #333; 
+    border: 1px solid #ccc; 
+    padding: 8px; 
+    border-radius: 4px; 
+    font-size: 16px; 
 }
 
 input[type="text"]::placeholder,
@@ -1111,7 +1156,7 @@ input[type="email"]::placeholder,
 input[type="tel"]::placeholder,
 input[type="password"]::placeholder,
 input[type="number"]::placeholder {
-    color: #888; /* Altere para a cor desejada do placeholder */
+    color: #888; 
 }
 
 /* Estilo da tabela */
@@ -1138,4 +1183,45 @@ table tr:nth-child(even) {
 
 table tr:hover {
     background-color: #f1f1f1;
+}
+
+/* Logout */
+.Logout {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    text-align: center; 
+    height: 100vh; 
+    padding: 20px;
+    background-color: #f9f9f9; 
+}
+
+.Logout h1 {
+    font-size: 2rem; 
+    color: #333; 
+    margin-bottom: 10px; 
+}
+
+.Logout p {
+    font-size: 1.2rem; 
+    color: #555; 
+    margin-bottom: 20px; 
+}
+
+.Logout img {
+    width: 20%; 
+    height: auto; 
+    margin-top: 20px; 
+}
+
+.Logout a {
+    display: block;
+    margin-top: 20px; 
+    color: #194159; 
+    text-decoration: none; 
+}
+
+.Logout a:hover {
+    text-decoration: underline; 
 }

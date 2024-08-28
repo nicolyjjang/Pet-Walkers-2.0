@@ -13,29 +13,30 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
+
+    <script src="./js/historico-pedidos.js" defer></script>
 </head>
 
 <body>
-    <!-- Cabeçalho-->
+    <!-- Cabeçalho -->
     <header>
         <div class="logo">
-             <img src="./assets/images/logo.svg" alt="Logo">
-             <h2 class="titulo-logo">Pets Walkers</h2>
+            <img src="./assets/images/logo.svg" alt="Logo">
+            <h2 class="titulo-logo">Pets Walkers</h2>
         </div>
- 
+
         <div class="links">
-             <a href="home.html">Home</a>
-             <a href="sobre.html">Sobre</a>
-             <a href="servico.html">Serviços</a>
-             <a href="blog.html">Blog</a>
-             <a href="contato.html">Contato</a>
+            <a href="home.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="servico.html">Serviços</a>
+            <a href="blog.html">Blog</a>
+            <a href="contato.html">Contato</a>
         </div>
         <button class="btn-iniciar"><a href="login.html">Log In</a></button>
-        <a href="pagamento.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
-     
-     </header>
+        <a href="carrinho.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
+    </header>
 
-     <main>
+    <main>
         <div class="sidebar">
             <div class="profile-section">
                 <img src="https://thumbs.dreamstime.com/b/%C3%ADcone-de-usu%C3%A1rio-m%C3%ADdia-social-vetor-imagem-perfil-do-avatar-padr%C3%A3o-retrato-182347582.jpg" alt="Foto do Cliente" class="profile-pic">
@@ -61,54 +62,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>10/08/2024</td>
-                        <td>Passeio Solo</td>
-                        <td>1 passeio solo</td>
-                        <td>R$ 25,00</td>
-                    </tr>
-                    <tr>
-                        <td>15/08/2024</td>
-                        <td>Passeio em Grupo</td>
-                        <td>1 passeio em grupo</td>
-                        <td>R$ 18,00</td>
-                    </tr>
-                    <tr>
-                        <td>20/08/2024</td>
-                        <td>Dia do Parque</td>
-                        <td>1 dia do parque</td>
-                        <td>R$ 32,00</td>
-                    </tr>
-                    <tr>
-                        <td>25/08/2024</td>
-                        <td>Pacote Mensal (Passeio Solo)</td>
-                        <td>Pacote mensal de passeios solo</td>
-                        <td>R$ 85,00</td>
-                    </tr>
-                    <tr>
-                        <td>01/01/2023</td>
-                        <td>Pacote Anual (Passeio Solo)</td>
-                        <td>Pacote anual de passeios solo</td>
-                        <td>R$ 1.100,00</td>
-                    </tr>
+                    <!-- pedidos preenchidos aqui através do js -->
                 </tbody>
             </table>
         </div>
     </main>
 
- <!-- Rodapé -->
- <footer>
-    <p>&copy; 2024 - Todos os direitos reservados</p>
-    <nav>
-        <ul>
-            <li><a href="#">Termos de uso</a></li>
-            <li><a href="#">Política de privacidade</a></li>
-            <li><a href="#">Sobre nós</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
-</footer>
-
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 - Todos os direitos reservados</p>
+        <nav>
+            <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 
 </html>
