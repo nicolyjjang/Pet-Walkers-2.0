@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
-const cors = require('cors')
+const cors = require('cors');
+const corsOptions = {
+    exposedHeaders: 'Authorization',
+};
+app.use(cors(corsOptions));
 app.use(express.json()); // Habilita o parsing de JSON
-app.use(cors());
 require('dotenv').config();
 const nodeEnv = process.env.NODE_ENV;
 
@@ -22,7 +25,7 @@ if (nodeEnv === ('local')) {
             console.error(e)
         })
     });
-}else{
+} else {
     chamarRotas();
 }
 app.listen(8080, () => {

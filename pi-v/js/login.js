@@ -2,15 +2,20 @@ const baseUrl = 'http://localhost:8080';
 var apiUrl = `${baseUrl}/login`;
 var form = $("#formLogin");
 document.getElementById('btnEntrar').addEventListener('click', function(e){
-  console.log('passando no botao login')  
   e.preventDefault();
+  // Validação de radio button customizada
+  $.validator.addMethod("radioRequired", function() {
+    return $('input[name="tipo"]:checked').length > 0;
+  }, "Favor escolher um tipo de usuário");  
   // Jquery para validar conteudo do formulário apos o submit
   $("#formLogin").validate({
     rules: {
+        tipo: {radioRequired : true},
         email: "required",
         senha: "required"
     },
     messages: {
+        tipo: { radioRequired : "Favor escolher um tipo de usuário"},
         email: "Favor preencher seu e-mail corretamente",
         senha: "Favor preencher sua senha"
     },
@@ -29,27 +34,38 @@ function enviar() {
         return false;
     }
 }
-function login() {
+async function login() {
     // Obtém o elemento de input pelo ID
     const inputElementEmail = document.getElementById('email');
     const inputElementSenha = document.getElementById('senha');
+    const inputElementRadioCliente = document.getElementById('cliente');
+    const inputElementRadioWalker = document.getElementById('walker');
 
     // Lê o valor do campo de entrada
     const inputValueEmail = inputElementEmail.value;
     const inputValueSenha = inputElementSenha.value;
-    
+    var tipo;
+    if ($('input[id="cliente"]:checked').length > 0) {
+        tipo = 'cliente';
+    }else if($('input[id="walker"]:checked').length > 0){
+        tipo = 'walker';
+    }
     const login = {
         email: inputValueEmail,
-        senha: inputValueSenha
+        senha: inputValueSenha,
+        tipo: tipo
     };
     //Chamada Axios para o Backend
     axios.post(apiUrl, login)
         .then(response => {
-            alert(response.data);
+            const data = (response.data);
+            console.log(data.id);
+         if(data.tipo = 'walker'){
+                window.location.href = `informacoes-pessoais-walker.html?id=${data.id}`;
+            }else if (data.tipo = 'cliente'){
+                window.location.href = `informacoes-pessoais-cliente.html?id=${data.id}`;
+            };
         })
-        .then(()=>{
-            location.reload();
-        }) 
         .catch(error => {
             alert('Erro ao fazer a requisição:', error);
         });
