@@ -20,7 +20,7 @@ Aqui estão algumas capturas de tela que ilustram as principais telas da platafo
 ![Login](https://github.com/user-attachments/assets/0d484fc6-cd22-4830-b69d-ed74f024af94)
 
 ### Tela de Cadastro de Walker
-![Tela - Walker](https://github.com/user-attachments/assets/93550b21-b0bc-4d58-ba4f-d10d539b985b)
+![Walker](https://github.com/user-attachments/assets/65ecf63d-c039-4570-88ce-875c3d40cb24)
 
 ### Tela de Home
 ![Home](https://github.com/user-attachments/assets/2b8a2f56-20f0-41fb-aabb-fce8a7630aef)
