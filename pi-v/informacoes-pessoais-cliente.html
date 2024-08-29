@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
 
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js" defer></script>
 
 </head>
 
@@ -36,6 +36,7 @@
         <a href="carrinho.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
     </header>
 
+    <hr>
     <div class="header-container">
         <h1>Contas - Pet Walkers</h1>
         <a href="logout.html" class="logout-button">Sair</a>
@@ -75,14 +76,14 @@
             <label for="endereco">Endereço:</label>
             <input type="text" id="endereco" name="endereco">
             
-            <label for="pets" class="pets">Pets:</label>
+            <label for="pets">Pets:</label>
             <div id="pets">
                 <div class="pet-group">
                     <label for="pet1">Nome do Pet 1:</label>
-                    <input type="text" id="pet1" name="pet1" readonly>
+                    <input type="text" id="pet1" name="pet1">
                     
                     <label for="idade1">Idade do Pet 1:</label>
-                    <input type="text" id="idade1" name="idade1" readonly>
+                    <input type="text" id="idade1" name="idade1">
                 </div>
             </div>
 

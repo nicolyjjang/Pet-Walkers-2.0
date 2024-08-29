@@ -1015,11 +1015,10 @@ select {
 
 /* sidebar */
 .sidebar {
+    margin-top: 60px;
     width: 250px;
     position: fixed;
-    top: 110px; 
-    bottom: 100px;
-    left: 0;
+    top: 150px;
     background-color: #B3D29C;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
@@ -1064,6 +1063,7 @@ select {
 .content {
     margin-left: 270px; 
     padding: 20px;
+    background-color: #f9f9f9;
 }
 
 /* informacoes cliente */
@@ -1140,22 +1140,33 @@ input[type="number"]::placeholder {
     color: #888; 
 }
 
-/* Estilo da tabela */
+.informacoes-walker{
+    margin-left: 270px; 
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para a Tabela */
 table {
+    background-color: #f9f9f9;
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 table th,
 table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
     text-align: left;
 }
 
 table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+    background-color: #8abf63;
+    color: white;
+    font-weight: 600;
 }
 
 table tr:nth-child(even) {
@@ -1165,7 +1176,6 @@ table tr:nth-child(even) {
 table tr:hover {
     background-color: #f1f1f1;
 }
-
 /* Logout */
 .Logout {
     display: flex; 
