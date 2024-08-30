@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize')
 const db = require('../config/db')
-const User = require('./usuario')
 
 const Walker = db.define('walker',{
     id: {
@@ -30,7 +29,5 @@ const Walker = db.define('walker',{
     },    
 
 })
-// Criar a tabela
-db.sync({ alter: true });
 
 module.exports = Walker;

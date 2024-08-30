@@ -46,7 +46,5 @@ const Cliente = db.define('clientes',{
     },    
 
 })
-// Criar a tabela
-db.sync({ alter: true });
 
 module.exports = Cliente;

@@ -25,17 +25,19 @@ if (nodeEnv === ('local')) {
         debug: false
     }).then((connection) => {
         connection.query('CREATE DATABASE IF NOT EXISTS pet_walkers;').then(() => {
+            sincronizarDB();
             chamarRotas();
         }).catch(function (e) {
             console.error(e)
         })
     });
 } else {
+    sincronizarDB();
     chamarRotas();
 }
 // Configurar o middleware para sessões
 app.use(session({
-    secret: secret, 
+    secret: secret,
     resave: false,
     saveUninitialized: true,
     store: sessionStore,
@@ -56,4 +58,16 @@ function chamarRotas() {
     app.use('/walker', walkerRoutes);
     app.use('/login', loginRoutes);
     app.use(contatoRoutes);
+}
+function sincronizarDB() {
+
+    const db = require('./models');
+
+    db.sequelize.sync({ alter: true })
+        .then(() => {
+            console.log('Database synced');
+        })
+        .catch(err => {
+            console.error('Error syncing database:', err);
+        });
 }

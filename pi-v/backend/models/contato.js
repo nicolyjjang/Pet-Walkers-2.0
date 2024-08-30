@@ -31,7 +31,4 @@ const Contato = db.define('contato',{
 
 })
 
-// Criar a tabela
-db.sync({ alter: true });
-
 module.exports = Contato;

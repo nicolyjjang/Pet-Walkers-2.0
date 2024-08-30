@@ -36,23 +36,23 @@ const getWalker = async (req, res) => {
         const walker = await Walker.findOne({
             where: {
                 id: id
-            }/* ,
+            },
             include: [{
                 model: User,
-                where: { id: Sequelize.col('User.id') }
-              }]  */           
+                required: true
+              }]         
         });
 
-        if (walker === null) {
-            res.status(500).json({ error: 'Walker não encontrado' });
-        } else {
-            console.log(walker); // 'exampleUser'
-            res.status(201).json(walker);
-        }
-    } catch (error) {
-        console.error('Erro ao obter walker:', error);
-        res.status(500).json({ error: 'Erro ao buscar walker' });
+    if (walker === null) {
+        res.status(500).json({ error: 'Walker não encontrado' });
+    } else {
+        console.log(walker); // 'exampleUser'
+        res.status(201).json(walker);
     }
+} catch (error) {
+    console.error('Erro ao obter walker:', error);
+    res.status(500).json({ error: 'Erro ao buscar walker' });
+}
 };
 
 module.exports = { postWalker, getWalker };

@@ -22,7 +22,4 @@ const Usuario = db.define('usuarios',{
     }
 })
 
-// Criar a tabela
-db.sync({ alter: true });
-
 module.exports = Usuario;
