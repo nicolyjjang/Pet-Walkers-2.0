@@ -1,37 +1,28 @@
 const Sequelize = require('sequelize')
 const db = require('../config/db')
 
-const Contato = db.define('contato',{
+const Usuario = db.define('usuarios',{
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
-    nome: {
-        type: Sequelize.STRING,
-        allowNull:false
-    },
-    telefone:{
-        type: Sequelize.STRING,
-        allowNull:false
-    },
     email: {
         type: Sequelize.STRING,
         allowNull:false
     },
-    mensagem: { 
+    senha: { 
         type: Sequelize.STRING,
         allowNull:false
     },
-    endereco:{
+    tipo: {
         type: Sequelize.STRING,
-        allowNull:true
-    },    
-
+        allowNull:false        
+    }
 })
 
 // Criar a tabela
 db.sync({ alter: true });
 
-module.exports = Contato;
+module.exports = Usuario;

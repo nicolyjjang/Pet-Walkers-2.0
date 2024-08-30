@@ -1,12 +1,15 @@
 const Sequelize = require('sequelize')
-const db = require('./db')
+const db = require('../config/db')
 
 const Cliente = db.define('clientes',{
     id: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        references: {
+            model: 'usuarios',
+            key: 'id'
+        }             
     },
     nome_cliente: {
         type: Sequelize.STRING,
@@ -24,14 +27,6 @@ const Cliente = db.define('clientes',{
         type: Sequelize.STRING,
         allowNull:true,
         defaultValue: 'Indefinido'
-    },
-    email: {
-        type: Sequelize.STRING,
-        allowNull:false
-    },
-    senha: { 
-        type: Sequelize.STRING,
-        allowNull:false
     },
     pet1: {
         type: Sequelize.STRING,
@@ -51,7 +46,6 @@ const Cliente = db.define('clientes',{
     },    
 
 })
-
 // Criar a tabela
 db.sync({ alter: true });
 

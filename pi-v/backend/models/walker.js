@@ -1,12 +1,16 @@
 const Sequelize = require('sequelize')
-const db = require('./db')
+const db = require('../config/db')
+const User = require('./usuario')
 
 const Walker = db.define('walker',{
     id: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        references: {
+            model: 'usuarios',
+            key: 'id'
+        }             
     },
     nome_tutor: {
         type: Sequelize.STRING,
@@ -20,21 +24,12 @@ const Walker = db.define('walker',{
         type: Sequelize.STRING,
         allowNull:false
     },
-    email: {
-        type: Sequelize.STRING,
-        allowNull:false
-    },
-    senha: { 
-        type: Sequelize.STRING,
-        allowNull:false
-    },
     endereco:{
         type: Sequelize.STRING,
         allowNull:true
     },    
 
 })
-
 // Criar a tabela
 db.sync({ alter: true });
 

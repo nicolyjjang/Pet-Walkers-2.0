@@ -1,4 +1,5 @@
 const Cliente = require('../models/cliente');
+const User = require('../models/usuario');
 
 const getCliente = async (req, res) => {
     res.send("Teste GET com sucesso");
@@ -7,15 +8,19 @@ const getCliente = async (req, res) => {
 const postCliente = async (req, res) => {
     try {
         const { nome_cliente, cpf, telefone, sexo, email, senha, pet1, pet2, idade, endereco } = req.body;
-
+        const tipo = 'cliente'
+        const newUser =  await User.create({            
+            email,
+            senha,
+            tipo       
+        });
+        const id = newUser.id;
         // Crie um novo registro de Cliente
         const newCliente = await Cliente.create({
             nome_cliente,
             cpf,
             telefone,
             sexo,
-            email,
-            senha,
             pet1,
             pet2,
             idade,

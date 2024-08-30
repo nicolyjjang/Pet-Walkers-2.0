@@ -1,17 +1,25 @@
 const Walker = require('../models/walker');
+const User = require('../models/usuario');
 const path = require('path');
+const Sequelize = require('sequelize');
+
 
 const postWalker = async (req, res) => {
     try {
         const { nome_tutor, cpf, telefone, email, senha, endereco } = req.body;
-
+        const tipo = 'walker'
+        const newUser = await User.create({
+            email,
+            senha,
+            tipo
+        });
+        const id = newUser.id;
         // Crie um novo registro de Walker
         const newWalker = await Walker.create({
+            id,
             nome_tutor,
             cpf,
             telefone,
-            email,
-            senha,
             endereco
         });
 
@@ -21,23 +29,30 @@ const postWalker = async (req, res) => {
         res.status(500).json({ error: 'Erro ao criar walker' });
     }
 };
-
-module.exports = postWalker;
-
-const getWalkerId = async (req, res) => {
+const getWalker = async (req, res) => {
     try {
         const id = req.params.id;
-        console.log(this.toString(id));
-        const walker = await Walker.findByPk(id);
-        console.log(walker);
-        //res.sendFile(path.join(__dirname, 'public', `informacoes-pessoais-walker.html?param=${id}`));
-        res.setHeader('Content-Type', 'text/html') ;
-        const filePath = 'informacoes-pessoais-walker.html';
-        res.sendFile(filePath, { root: path.join(__dirname, 'public') });
+        console.log('id: ' + JSON.stringify(id));
+        const walker = await Walker.findOne({
+            where: {
+                id: id
+            }/* ,
+            include: [{
+                model: User,
+                where: { id: Sequelize.col('User.id') }
+              }]  */           
+        });
+
+        if (walker === null) {
+            res.status(500).json({ error: 'Walker não encontrado' });
+        } else {
+            console.log(walker); // 'exampleUser'
+            res.status(201).json(walker);
+        }
     } catch (error) {
-        console.error('Erro ao criar walker:', error);
-        res.status(404).send('Erro ao recuperar Walker');
+        console.error('Erro ao obter walker:', error);
+        res.status(500).json({ error: 'Erro ao buscar walker' });
     }
 };
 
-module.exports = getWalkerId;
+module.exports = { postWalker, getWalker };

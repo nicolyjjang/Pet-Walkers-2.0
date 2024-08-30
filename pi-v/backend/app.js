@@ -3,11 +3,15 @@ const app = express();
 const cors = require('cors');
 const corsOptions = {
     exposedHeaders: 'Authorization',
+    credentials: true // Permite o envio de cookies
 };
 app.use(cors(corsOptions));
 app.use(express.json()); // Habilita o parsing de JSON
 require('dotenv').config();
+const session = require('express-session');
+const sessionStore = require('./config/session');
 const nodeEnv = process.env.NODE_ENV;
+const secret = process.env.SESSION_SECRET;
 
 // Verifica se o ambiente está apontando para máquina do desenvolvedor
 if (nodeEnv === ('local')) {
@@ -17,7 +21,8 @@ if (nodeEnv === ('local')) {
         user: 'root',
         password: 'password',
         host: 'localhost',
-        port: '3306'
+        port: '3306',
+        debug: false
     }).then((connection) => {
         connection.query('CREATE DATABASE IF NOT EXISTS pet_walkers;').then(() => {
             chamarRotas();
@@ -28,6 +33,14 @@ if (nodeEnv === ('local')) {
 } else {
     chamarRotas();
 }
+// Configurar o middleware para sessões
+app.use(session({
+    secret: secret, 
+    resave: false,
+    saveUninitialized: true,
+    store: sessionStore,
+    cookie: { secure: false } // Defina como true em produção com HTTPS
+}));
 app.listen(8080, () => {
     console.log("Servidor iniciado na porta 8080: https://localhost:8080");
 });
@@ -40,7 +53,7 @@ function chamarRotas() {
 
     // Use as rotas definidas no arquivo cliente.js
     app.use(clienteRoutes);
-    app.use(walkerRoutes);
-    app.use(loginRoutes);
+    app.use('/walker', walkerRoutes);
+    app.use('/login', loginRoutes);
     app.use(contatoRoutes);
 }
