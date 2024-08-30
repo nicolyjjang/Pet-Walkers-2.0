@@ -60,12 +60,12 @@ async function login() {
             const data = (response.data);
             console.log(data.id);
          if(data.tipo = 'walker'){
-                window.location.href = `informacoes-pessoais-walker.html?id=${data.id}`;
+                window.location.href = `informacoes-pessoais-walker.html`;
             }else if (data.tipo = 'cliente'){
-                window.location.href = `informacoes-pessoais-cliente.html?id=${data.id}`;
+                window.location.href = `informacoes-pessoais-cliente.html`;
             };
         })
         .catch(error => {
-            alert('Erro ao fazer a requisição:', error);
+            alert('Erro ao fazer a requisição de login. Verificar com o suporte.', error);
         });
 }

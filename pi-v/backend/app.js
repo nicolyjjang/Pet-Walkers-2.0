@@ -65,9 +65,9 @@ function sincronizarDB() {
 
     db.sequelize.sync({ alter: true })
         .then(() => {
-            console.log('Database synced');
+            console.log('Database sincronizada');
         })
         .catch(err => {
-            console.error('Error syncing database:', err);
+            console.error('Erro ao sincronizar DB:', err);
         });
 }

@@ -42,6 +42,18 @@ const getSession = (req, res) => {
     }
 };
 
-module.exports = { postLogin, getSession} ;
+const postLogout = async (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:8000");  //habilita endereço de servidor frontend
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+    req.session.destroy(err => {
+        if (err) {
+            return res.status(500).send({ message: 'Erro ao fazer logout' });
+        }
+        res.send({ message: 'Logout bem-sucedido' });
+    });
+};
+
+module.exports = { postLogin, getSession, postLogout} ;
 
 

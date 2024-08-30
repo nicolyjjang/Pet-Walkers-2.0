@@ -29,13 +29,15 @@
             <a href="blog.html">Blog</a>
             <a href="contato.html">Contato</a>
         </div>
-        <button class="btn-iniciar"><a href="login.html">Log In</a></button>
+        <div id="loginSection">
+            <button class="btn-iniciar"><a href="login.html">Log In</a></button>
+        </div>
         <a href="pagamento.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
     </header>
 
     <div class="header-container">
         <h1>Contas - Pet Walkers</h1>
-        <a href="logout.html" class="logout-button">Sair</a>
+        <a href="#" class="logout-button" onclick="logout()">Sair</a>
     </div>
 
     <div class="sidebar">
@@ -64,9 +66,6 @@
             
             <label for="telefone">Telefone:</label>
             <input type="tel" id="telefone" name="telefone" autocomplete="tel">
-            
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required autocomplete="new-password">
             
             <label for="endereco">Endereço:</label>
             <input type="text" id="endereco" name="endereco" autocomplete="address">
