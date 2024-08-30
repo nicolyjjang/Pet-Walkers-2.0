@@ -1,5 +1,5 @@
 const baseUrl = 'http://localhost:8080'; 
-var apiUrl = `${baseUrl}/login`;
+var apiUrl = `${baseUrl}/login/auth`;
 var form = $("#formLogin");
 document.getElementById('btnEntrar').addEventListener('click', function(e){
   e.preventDefault();
@@ -38,8 +38,6 @@ async function login() {
     // Obtém o elemento de input pelo ID
     const inputElementEmail = document.getElementById('email');
     const inputElementSenha = document.getElementById('senha');
-    const inputElementRadioCliente = document.getElementById('cliente');
-    const inputElementRadioWalker = document.getElementById('walker');
 
     // Lê o valor do campo de entrada
     const inputValueEmail = inputElementEmail.value;
@@ -56,6 +54,7 @@ async function login() {
         tipo: tipo
     };
     //Chamada Axios para o Backend
+    axios.defaults.withCredentials = true;
     axios.post(apiUrl, login)
         .then(response => {
             const data = (response.data);

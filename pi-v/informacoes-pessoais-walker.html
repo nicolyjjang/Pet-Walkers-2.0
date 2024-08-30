@@ -90,34 +90,7 @@
             </ul>
         </nav>
     </footer>
-
-    <!-- Script JavaScript -->
-    <script>
-        
-        function carregarDadosWalker() {
-            
-            const walker = {
-                nome: "Nome",
-                cpf: "000.000.000-00",
-                email: "email@walker.com",
-                telefone: "00 00000-0000",
-                endereco: "Rua Exemplo, 589",
-                disponibilidade: "Segunda a Sexta, das 9h às 17h"
-            };
-
-            
-            document.getElementById('profile-name').textContent = walker.nome;
-            document.getElementById('profile-email').textContent = walker.email;
-            document.getElementById('nome').value = walker.nome;
-            document.getElementById('cpf').value = walker.cpf;
-            document.getElementById('email').value = walker.email;
-            document.getElementById('telefone').value = walker.telefone;
-            document.getElementById('endereco').value = walker.endereco;
-            document.getElementById('disponibilidade').value = walker.disponibilidade;
-        }
-
-        // chamar a função ao carregar a página
-        document.addEventListener('DOMContentLoaded', carregarDadosWalker);
-    </script>
+    <script src="js/informacoes_pessoais.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
 </body>
 </html>
