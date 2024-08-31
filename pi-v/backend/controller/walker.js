@@ -40,19 +40,56 @@ const getWalker = async (req, res) => {
             include: [{
                 model: User,
                 required: true
-              }]         
+            }]
         });
 
-    if (walker === null) {
-        res.status(500).json({ error: 'Walker não encontrado' });
-    } else {
-        console.log(walker); // 'exampleUser'
-        res.status(201).json(walker);
+        if (walker === null) {
+            res.status(500).json({ error: 'Walker não encontrado' });
+        } else {
+            console.log(walker); // 'exampleUser'
+            res.status(201).json(walker);
+        }
+    } catch (error) {
+        console.error('Erro ao obter walker:', error);
+        res.status(500).json({ error: 'Erro ao buscar walker' });
     }
-} catch (error) {
-    console.error('Erro ao obter walker:', error);
-    res.status(500).json({ error: 'Erro ao buscar walker' });
-}
 };
 
-module.exports = { postWalker, getWalker };
+const atualizaWalker = async (req, res) => {
+    try {
+        const { id, nome_tutor, cpf, telefone, email, endereco } = req.body;
+        console.log('-----------------------------------------------------------')
+        console.log(JSON.stringify(req.body))
+        console.log('-----------------------------------------------------------')
+
+        const user = await User.findByPk(id);
+        if (user) {
+            user.email = email;
+            await user.save(); // Salve as alterações no banco de dados
+            console.log('Usuário atualizado com sucesso!');
+        } else {
+            console.log('Usuário não encontrado.');
+        }
+
+        const walker = await Walker.findByPk(id);
+        if (walker) {
+                walker.nome_tutor = nome_tutor;
+                walker.cpf = cpf;
+                walker.telefone = telefone;
+                walker.endereco = endereco;
+                console.log('walker antes do save' + JSON.stringify(walker))
+                console.log ('telefone dos params' + telefone)
+            await walker.save(); // Salve as alterações no banco de dados
+            console.log('Walker atualizado com sucesso!');
+        } else {
+            console.log('Walker não encontrado.');
+        }
+        const combinedJson = { ...user, ...walker };
+        res.status(201).json(combinedJson); // Retorne o usuário Walker atualizado
+    } catch (error) {
+        console.error('Erro ao atualizar walker:', error);
+        res.status(500).json({ error: 'Erro ao atualizar walker' });
+    }
+};
+
+module.exports = { postWalker, getWalker, atualizaWalker };

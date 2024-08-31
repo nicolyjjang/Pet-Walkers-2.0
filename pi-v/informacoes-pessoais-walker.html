@@ -30,7 +30,7 @@
             <a href="contato.html">Contato</a>
         </div>
         <div id="loginSection">
-            <button class="btn-iniciar"><a href="login.html">Log In</a></button>
+            <button class="btn-iniciar" id="btnLogin"><a href="login.html">Log In</a></button>
         </div>
         <a href="pagamento.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
     </header>
@@ -54,6 +54,7 @@
     </div>
     <main class="informacoes">
         <h1>Informações Pessoais</h1>
+        <div id="divError" class="divError"></div>
         <form id="personal-info-form">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required autocomplete="name">
@@ -73,7 +74,7 @@
             <label for="disponibilidade">Disponibilidade:</label>
             <input type="text" id="disponibilidade" name="disponibilidade" autocomplete="off">
 
-            <button type="submit">Atualizar Informações</button>
+            <button type="submit" id="btnAtualizar">Atualizar Informações</button>
         </form>
     </main>
 
@@ -89,7 +90,9 @@
             </ul>
         </nav>
     </footer>
-    <script src="js/informacoes_pessoais.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>   
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
+    <script src="js/informacoes_pessoais.js"></script>
 </body>
 </html>
