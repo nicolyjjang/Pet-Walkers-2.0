@@ -2,6 +2,9 @@ body{
     font-family: 'Poppins', sans-serif;
     color: #194159;
 }
+.info-pessoais-walker,.info-pessoais-cliente{
+    visibility: hidden;
+}
 
 /* Cabeçalho*/
 header {

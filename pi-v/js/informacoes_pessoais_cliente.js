@@ -45,11 +45,14 @@ function verificaSessao() {
                             carregarDadosCliente(cliente);
                             document.getElementById('btnLogin').disabled = true;
                             document.getElementById('loginSection').style.display = 'none';
+                            document.body.style.visibility = 'visible';
                         })
                         .catch(error => {
-                            alert('Erro ao fazer a requisição de usuário:', error);
+                            alert('Erro ao carregar usuario: '+ error.message)
+                            window.location.href = `pagina404.html`;                            
                         });
                 } else {
+                    alert('Não encontrada Sessão Ativa')
                     window.location.href = `pagina404.html`;
                 }
             })
@@ -142,4 +145,6 @@ function atualizarCliente(idUsuario) {
         });
 };
 
-window.onload = verificaSessao();
+document.addEventListener('DOMContentLoaded', function() {
+    verificaSessao();
+});

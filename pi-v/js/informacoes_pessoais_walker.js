@@ -45,11 +45,14 @@ function verificaSessao() {
                             carregarDadosWalker(walker);
                             document.getElementById('btnLogin').disabled = true;
                             document.getElementById('loginSection').style.display = 'none';
+                            document.body.style.visibility = 'visible';
                         })
                         .catch(error => {
-                            alert('Erro ao fazer a requisição de usuário:', error);
+                            alert('Erro ao carregar usuario: '+ error.message)
+                            window.location.href = `pagina404.html`;
                         });
                 } else {
+                    alert('Não encontrada Sessão Ativa')
                     window.location.href = `pagina404.html`;
                 }
             })
@@ -130,5 +133,6 @@ function atualizarWalker(idUsuario) {
             alert('Erro ao fazer a requisição de login. Verificar com o suporte.', error);
         });
 };
-
-window.onload = verificaSessao();
+document.addEventListener('DOMContentLoaded', function() {
+    verificaSessao();
+});
