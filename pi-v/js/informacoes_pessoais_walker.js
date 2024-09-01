@@ -35,7 +35,7 @@ function verificaSessao() {
         axios.defaults.withCredentials = true;
         axios.get(apiUrlSession)
             .then(response => {
-                const idUsuario = response.data.user;
+                const idUsuario = response.data.user.id;
                 id = idUsuario;
                 if (idUsuario) {
                     var apiUrlWalker = `${baseUrl}/walker/user/${idUsuario}`;

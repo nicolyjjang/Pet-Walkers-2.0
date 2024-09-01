@@ -15,7 +15,8 @@ const postLogin = async (req, res, next) => {
         if (result) {
             const id = result.id;
             const obj = { tipo: tipo, id: id };
-            req.session.user = id;
+            req.session.user = obj;
+            console.log('session obj ' + JSON.stringify(req.session.user))
             req.session.save(function (err) {
                 if (err) return next(err)
                     console.log(err);
@@ -35,6 +36,8 @@ const getSession = (req, res) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:8000"); //habilita endereço de servidor frontend
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");   
     console.log('Get Session: ' + req.session.user)
+    console.log('Get Role: ' + req.session.user.tipo)
+
     if (req.session.user) {
         res.send({ user: req.session.user });
     } else {
