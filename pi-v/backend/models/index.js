@@ -12,6 +12,8 @@ Object.keys(db).forEach(nomeModelo => {
 
 db.Usuario.hasOne(db.Walker, { foreignKey: 'id' });
 db.Walker.belongsTo(db.Usuario, { foreignKey: 'id' });
+db.Usuario.hasOne(db.Cliente, { foreignKey: 'id' });
+db.Cliente.belongsTo(db.Usuario, { foreignKey: 'id' });
 
 db.sequelize = require('../config/db')
 db.Sequelize = require('sequelize')

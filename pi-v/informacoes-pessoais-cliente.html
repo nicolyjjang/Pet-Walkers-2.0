@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,18 +30,22 @@
             <a href="blog.html">Blog</a>
             <a href="contato.html">Contato</a>
         </div>
-        <button class="btn-iniciar"><a href="login.html">Log In</a></button>
+        <div id="loginSection">
+            <button class="btn-iniciar" id="btnLogin"><a href="login.html">Log In</a></button>
+        </div>
+
         <a href="pagamento.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
     </header>
 
     <div class="header-container">
         <h1>Contas - Pet Walkers</h1>
-        <a href="logout.html" class="logout-button">Sair</a>
+        <a href="#" class="logout-button" onclick="logout()">Sair</a>
     </div>
 
     <div class="sidebar">
         <div class="profile-section">
-            <img src="https://thumbs.dreamstime.com/b/%C3%ADcone-de-usu%C3%A1rio-m%C3%ADdia-social-vetor-imagem-perfil-do-avatar-padr%C3%A3o-retrato-182347582.jpg" alt="Foto do Cliente" class="profile-pic">
+            <img src="https://thumbs.dreamstime.com/b/%C3%ADcone-de-usu%C3%A1rio-m%C3%ADdia-social-vetor-imagem-perfil-do-avatar-padr%C3%A3o-retrato-182347582.jpg"
+                alt="Foto do Cliente" class="profile-pic">
             <h2 class="profile-name" id="profile-name">Nome do Cliente</h2>
             <p class="profile-email" id="profile-email">email@cliente.com</p>
         </div>
@@ -53,35 +58,36 @@
 
     <main class="informacoes">
         <h1>Informações Pessoais</h1>
+        <div id="divError" class="divError"></div>
         <form id="personal-info-form">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
-            
+
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" name="cpf" required>
-            
+
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" required>
-            
+
             <label for="telefone">Telefone:</label>
             <input type="tel" id="telefone" name="telefone">
-            
+
             <label for="endereco">Endereço:</label>
             <input type="text" id="endereco" name="endereco">
-            
+
             <label for="pets" class="pets">Pets:</label>
             <div id="pets">
                 <div class="pet-group">
                     <label for="pet1">Nome do Pet 1:</label>
                     <input type="text" id="pet1" name="pet1" readonly>
-                    
+
                     <label for="idade1">Idade do Pet 1:</label>
                     <input type="text" id="idade1" name="idade1" readonly>
                 </div>
             </div>
 
             <button type="button" id="add-pet-btn">+ Adicionar mais pets</button>
-            <button type="submit">Atualizar Informações</button>
+            <button type="submit" id="btnAtualizar">Atualizar Informações</button>
         </form>
     </main>
 
@@ -97,7 +103,10 @@
             </ul>
         </nav>
     </footer>
-    <script src="js/informacoes_pessoais.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/informacoes_pessoais_cliente.js"></script>
 </body>
+
 </html>

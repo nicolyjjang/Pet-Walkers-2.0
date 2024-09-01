@@ -54,7 +54,7 @@ function chamarRotas() {
     const contatoRoutes = require('./routes/contato.js');
 
     // Use as rotas definidas no arquivo cliente.js
-    app.use(clienteRoutes);
+    app.use('/cliente',clienteRoutes);
     app.use('/walker', walkerRoutes);
     app.use('/login', loginRoutes);
     app.use(contatoRoutes);

@@ -1,8 +1,5 @@
 const Walker = require('../models/walker');
 const User = require('../models/usuario');
-const path = require('path');
-const Sequelize = require('sequelize');
-
 
 const postWalker = async (req, res) => {
     try {
@@ -22,8 +19,8 @@ const postWalker = async (req, res) => {
             telefone,
             endereco
         });
-
-        res.status(201).json(newWalker); // Retorne o novo usuário Walker
+        const combinedJson = { ...newUser, ...newWalker };
+        res.status(201).json(combinedJson); // Retorne o usuário Walker 
     } catch (error) {
         console.error('Erro ao criar walker:', error);
         res.status(500).json({ error: 'Erro ao criar walker' });
@@ -46,7 +43,6 @@ const getWalker = async (req, res) => {
         if (walker === null) {
             res.status(500).json({ error: 'Walker não encontrado' });
         } else {
-            console.log(walker); // 'exampleUser'
             res.status(201).json(walker);
         }
     } catch (error) {
@@ -58,9 +54,6 @@ const getWalker = async (req, res) => {
 const atualizaWalker = async (req, res) => {
     try {
         const { id, nome_tutor, cpf, telefone, email, endereco } = req.body;
-        console.log('-----------------------------------------------------------')
-        console.log(JSON.stringify(req.body))
-        console.log('-----------------------------------------------------------')
 
         const user = await User.findByPk(id);
         if (user) {
@@ -70,15 +63,12 @@ const atualizaWalker = async (req, res) => {
         } else {
             console.log('Usuário não encontrado.');
         }
-
         const walker = await Walker.findByPk(id);
         if (walker) {
                 walker.nome_tutor = nome_tutor;
                 walker.cpf = cpf;
                 walker.telefone = telefone;
                 walker.endereco = endereco;
-                console.log('walker antes do save' + JSON.stringify(walker))
-                console.log ('telefone dos params' + telefone)
             await walker.save(); // Salve as alterações no banco de dados
             console.log('Walker atualizado com sucesso!');
         } else {

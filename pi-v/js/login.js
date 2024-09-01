@@ -59,7 +59,7 @@ async function login() {
         .then(response => {
             const data = (response.data);
             console.log(data.id);
-         if(data.tipo = 'walker'){
+         if(data.tipo === 'walker'){
                 window.location.href = `informacoes-pessoais-walker.html`;
             }else if (data.tipo = 'cliente'){
                 window.location.href = `informacoes-pessoais-cliente.html`;

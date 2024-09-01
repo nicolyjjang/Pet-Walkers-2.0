@@ -1,7 +1,7 @@
 const baseUrl = 'http://localhost:8080';
 const apiUrlSession = `${baseUrl}/login/session`;
 const apiUrlLogout = `${baseUrl}/login/logout`;
-const apiUrlAtualiza = `${baseUrl}/walker/updateWalker`;
+const apiUrlAtualiza = `${baseUrl}/cliente/updateCliente`;
 var form = $("#personal-info-form");
 var id;
 
@@ -18,34 +18,31 @@ function logout() {
         });
     window.location.href = `login.html`;
 };
-function carregarDadosWalker(walker) {
-
-    document.getElementById('profile-name').textContent = walker.nome_tutor;
-    document.getElementById('profile-email').textContent = walker.usuario.email;
-    document.getElementById('nome').value = walker.nome_tutor;
-    document.getElementById('cpf').value = walker.cpf;
-    document.getElementById('email').value = walker.usuario.email;
-    document.getElementById('telefone').value = walker.telefone;
-    document.getElementById('endereco').value = walker.endereco;
-    //document.getElementById('disponibilidade').value = walker.disponibilidade;
+function carregarDadosCliente(cliente) {
+    document.getElementById('profile-name').textContent = cliente.nome_cliente;
+    document.getElementById('profile-email').textContent = cliente.usuario.email;
+    document.getElementById('nome').value = cliente.nome_cliente;
+    document.getElementById('cpf').value = cliente.cpf;
+    document.getElementById('email').value = cliente.usuario.email;
+    document.getElementById('telefone').value = cliente.telefone;
+    document.getElementById('pet1').value = cliente.pet1;
+    document.getElementById('idade1').value = cliente.idade;
+    document.getElementById('endereco').value = cliente.endereco;
 }
 
 function verificaSessao() {
-    console.log('passei no verificaSessao')
     try {
         axios.defaults.withCredentials = true;
         axios.get(apiUrlSession)
             .then(response => {
-                console.log(response.data.user);
-                console.log(JSON.stringify(response))
                 const idUsuario = response.data.user;
                 id = idUsuario;
                 if (idUsuario) {
-                    var apiUrlWalker = `${baseUrl}/walker/user/${idUsuario}`;
-                    axios.get(apiUrlWalker)
+                    var apiUrlCliente = `${baseUrl}/cliente/user/${idUsuario}`;
+                    axios.get(apiUrlCliente)
                         .then(response => {
-                            const walker = response.data;
-                            carregarDadosWalker(walker);
+                            const cliente = response.data;
+                            carregarDadosCliente(cliente);
                             document.getElementById('btnLogin').disabled = true;
                             document.getElementById('loginSection').style.display = 'none';
                         })
@@ -69,17 +66,23 @@ document.getElementById('btnAtualizar').addEventListener('click', function (e) {
     // Jquery para validar conteudo do formulário apos o submit
     $("#personal-info-form").validate({
         rules: {
-            nome: "required",
+            name: "required",
             email: "required",
             telefone: "required",
             cpf: "required",
+            senha: "required",
+            pet1: "required",
+            idade: "required",
             endereco: "required"
         },
         messages: {
-            nome: "Favor preencher seu nome",
-            email: "Favor preencher seu e-mail corretamente",
+            name: "Favor preencher seu nome",
+            email: "Favor preencher seu e-mail",
             telefone: "Favor preencher seu telefone",
             cpf: "Favor preencher seu cpf",
+            senha: "Favor preencher sua senha",
+            pet1: "Favor preencher seu pet1",
+            idade: "Favor preencher sua idade",
             endereco: "Favor preencher seu endereco",
         },
         errorElement: "div",
@@ -92,15 +95,19 @@ document.getElementById('btnAtualizar').addEventListener('click', function (e) {
 function enviar() {
     if (form.valid()) {
         verificaSessao();
-        atualizarWalker(id);
+        atualizarCliente(id);
         return false;
     }
 };
-function atualizarWalker(idUsuario) {
-    const inputElementName = document.getElementById('nome');
+function atualizarCliente(idUsuario) {
+    // Obtém o elemento de input pelo ID
+    const inputElementName = document.getElementById('name');
     const inputElementCpf = document.getElementById('cpf');
     const inputElementTelefone = document.getElementById('telefone');
     const inputElementEmail = document.getElementById('email');
+    const inputElementSenha = document.getElementById('senha');
+    const inputElementPet1 = document.getElementById('pet1');
+    const inputElementIdade = document.getElementById('idade');
     const inputElementEndereco = document.getElementById('endereco');
 
     // Lê o valor do campo de entrada
@@ -108,22 +115,26 @@ function atualizarWalker(idUsuario) {
     const inputValueCpf = inputElementCpf.value;
     const inputValueTelefone = inputElementTelefone.value;
     const inputValueEmail = inputElementEmail.value;
+    const inputValueSenha = inputElementSenha.value;
+    const inputValuePet1 = inputElementPet1.value;
+    const inputValueIdade = inputElementIdade.value;
     const inputValueEndereco = inputElementEndereco.value;
 
-
-    const walker = {
+    const cliente = {
         id: idUsuario,
-        nome_tutor: inputValueName,
+        nome_cliente: inputValueName,
         cpf: inputValueCpf,
         telefone: inputValueTelefone,
         email: inputValueEmail,
+        senha: inputValueSenha,
+        pet1: inputValuePet1,
+        idade: inputValueIdade,
         endereco: inputValueEndereco
     };
-    console.log('walker antes de atualizar' + (JSON.stringify(walker))
-    )
+
     //Chamada Axios para o Backend
     axios.defaults.withCredentials = true;
-    axios.post(apiUrlAtualiza, walker)
+    axios.post(apiUrlAtualiza, cliente)
         .then(response => {
             console.log(JSON.stringify(response));
             alert('Dados Atualizados com Sucesso!')
