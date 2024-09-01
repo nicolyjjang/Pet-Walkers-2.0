@@ -66,23 +66,23 @@ document.getElementById('btnAtualizar').addEventListener('click', function (e) {
     // Jquery para validar conteudo do formulário apos o submit
     $("#personal-info-form").validate({
         rules: {
-            name: "required",
+            nome: "required",
             email: "required",
             telefone: "required",
             cpf: "required",
             senha: "required",
             pet1: "required",
-            idade: "required",
+            idade1: "required",
             endereco: "required"
         },
         messages: {
-            name: "Favor preencher seu nome",
+            nome: "Favor preencher seu nome",
             email: "Favor preencher seu e-mail",
             telefone: "Favor preencher seu telefone",
             cpf: "Favor preencher seu cpf",
             senha: "Favor preencher sua senha",
             pet1: "Favor preencher seu pet1",
-            idade: "Favor preencher sua idade",
+            idade1: "Favor preencher sua idade",
             endereco: "Favor preencher seu endereco",
         },
         errorElement: "div",
@@ -101,13 +101,12 @@ function enviar() {
 };
 function atualizarCliente(idUsuario) {
     // Obtém o elemento de input pelo ID
-    const inputElementName = document.getElementById('name');
+    const inputElementName = document.getElementById('nome');
     const inputElementCpf = document.getElementById('cpf');
     const inputElementTelefone = document.getElementById('telefone');
     const inputElementEmail = document.getElementById('email');
-    const inputElementSenha = document.getElementById('senha');
     const inputElementPet1 = document.getElementById('pet1');
-    const inputElementIdade = document.getElementById('idade');
+    const inputElementIdade = document.getElementById('idade1');
     const inputElementEndereco = document.getElementById('endereco');
 
     // Lê o valor do campo de entrada
@@ -115,7 +114,6 @@ function atualizarCliente(idUsuario) {
     const inputValueCpf = inputElementCpf.value;
     const inputValueTelefone = inputElementTelefone.value;
     const inputValueEmail = inputElementEmail.value;
-    const inputValueSenha = inputElementSenha.value;
     const inputValuePet1 = inputElementPet1.value;
     const inputValueIdade = inputElementIdade.value;
     const inputValueEndereco = inputElementEndereco.value;
@@ -126,7 +124,6 @@ function atualizarCliente(idUsuario) {
         cpf: inputValueCpf,
         telefone: inputValueTelefone,
         email: inputValueEmail,
-        senha: inputValueSenha,
         pet1: inputValuePet1,
         idade: inputValueIdade,
         endereco: inputValueEndereco

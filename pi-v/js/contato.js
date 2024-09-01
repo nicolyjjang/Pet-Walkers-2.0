@@ -19,36 +19,8 @@ $("#formContato").validate({
     },
     errorElement: "div",
     errorPlacement: function (error, element) {
-        error.appendTo($('#divError'));
-    },
-    showErrors: function(errorMap, errorList) {
-        var self = this;
-
-        // Remove todas as mensagens de erro existentes na div de erros
-        $("#divError").empty();
-
-        // Chama a função original para mostrar os erros
-        self.defaultShowErrors();
-
-        // Verifica mensagens de erro duplicadas
-        $.each(self.errorList, function(index, error) {
-            var $element = $(error.element);
-            var $errorInContainer = $("#divError").find('[data-for="' + $element.attr('id') + '"]');
-
-            if ($errorInContainer.length === 0) {
-                // Se não encontrar a mensagem, adiciona uma nova
-                error.message = self.defaultMessage(error.element, error.method);
-                var $error = $('<label/>').attr({
-                    for: $element.attr('id'),
-                    class: 'error',
-                    'data-for': $element.attr('id')
-                }).text(error.message);
-
-                // Adiciona a mensagem de erro à div
-                $error.appendTo("#divError");
-            }
-        });
-    }    
+        error.insertBefore(element);
+    }
 });
 
 document.getElementById('btnEnviar').addEventListener('click', function (e) {
