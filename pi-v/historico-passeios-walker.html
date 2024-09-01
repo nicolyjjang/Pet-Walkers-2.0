@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informações Pessoais - Pets Walkers</title>
+    <title>Histórico de Passeios - Pets Walkers</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
+
+    <script src="./js/historico-passeios.js" defer></script> <!-- Inclua o script para preencher a tabela -->
 </head>
 
 <body>
@@ -30,9 +32,10 @@
             <a href="contato.html">Contato</a>
         </div>
         <button class="btn-iniciar"><a href="login.html">Log In</a></button>
-        <a href="pagamento.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
+        <a href="carrinho.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
     </header>
 
+    <hr>
     <div class="header-container">
         <h1>Contas - Pet Walkers</h1>
         <a href="logout.html" class="logout-button">Sair</a>
@@ -47,11 +50,11 @@
         <nav class="sidebar-nav">
             <a href="informacoes-pessoais-walker.html">Informações Pessoais</a>
             <a href="disponibilidade.html">Disponibilidade</a>
-            <a href="historico-passeios.html">Histórico de Passeios</a>
+            <a href="historico-passeios-walker.html">Histórico de Passeios</a>
         </nav>
     </div>
 
-    <main class="informacoes">
+    <main class="informacoes-walker">
         <h1>Histórico de Passeios</h1>
         <table>
             <thead>
@@ -63,64 +66,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>01/08/2024</td>
-                    <td>09:00</td>
-                    <td>Márcia</td>
-                    <td>Passeio Solo</td>
-                </tr>
-                <tr>
-                    <td>02/07/2024</td>
-                    <td>14:00</td>
-                    <td>Ana</td>
-                    <td>Passeio em Grupo</td>
-                </tr>
-                <tr>
-                    <td>10/06/2024</td>
-                    <td>11:00</td>
-                    <td>Roberto</td>
-                    <td>Dia do Parque</td>
-                </tr>
-                <tr>
-                    <td>15/08/2023</td>
-                    <td>16:00</td>
-                    <td>Juliana</td>
-                    <td>Passeio Solo</td>
-                </tr>
-                <tr>
-                    <td>20/08/2023</td>
-                    <td>09:30</td>
-                    <td>Lucas</td>
-                    <td>Passeio em Grupo</td>
-                </tr>
-                <tr>
-                    <td>25/08/2023</td>
-                    <td>13:00</td>
-                    <td>Fernanda</td>
-                    <td>Dia do Parque</td>
-                </tr>
-                <tr>
-                    <td>30/08/2023</td>
-                    <td>10:00</td>
-                    <td>Camila</td>
-                    <td>Passeio Solo</td>
-                </tr>
+                <!-- as linhas da tabela serão inseridas aqui - pelo js -->
             </tbody>
         </table>
     </main>
 
-<!-- Rodapé -->
-<footer>
-    <p>&copy; 2024 - Todos os direitos reservados</p>
-    <nav>
-        <ul>
-            <li><a href="#">Termos de uso</a></li>
-            <li><a href="#">Política de privacidade</a></li>
-            <li><a href="#">Sobre nós</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
-</footer>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 - Todos os direitos reservados</p>
+        <nav>
+            <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
 
 </body>
 

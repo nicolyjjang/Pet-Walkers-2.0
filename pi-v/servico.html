@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
+
+    <script src="./js/index.js"></script>
+
 </head>
 <body>
     <!-- Cabeçalho-->
@@ -29,25 +32,49 @@
              <a href="contato.html">Contato</a>
         </div>
         <button class="btn-iniciar"><a href="login.html">Log In</a></button>
-        <a href="pagamento.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
+        <a href="carrinho.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
      
      </header>
 
     <main>
         <hr>
+        <h3 class="servico-titulo">Nossos serviços</h3>
         <section class="conteudo-servicos">
             <img src="./assets/images/cachorro-servico.svg" alt="Cachorro de coleira olhando para o lado esquerdo">
             <div class="conteudo-servicos-escrito">
-                <h3 class="servico-titulo">Nossos serviços</h3>
-                <p class="servico-palavra"><em>Passeio solo</em></p>
-                <p>Oferecemos passeios individuais, dedicados exclusivamente ao seu pet, proporcionando atenção personalizada e um tempo de qualidade ao ar livre.</p>
-                <button class="conteudo-btn2"><strong>R$25,00</strong> /passeio/cachorro</button>
-                <p class="servico-palavra"><em>Passeio em grupo</em></p>
-                <p>Socialização e diversão estão garantidas nos nossos passeios em grupo, onde os pets compartilham experiências animadas e criam laços de amizade em meio à natureza.</p>
-                <button class="conteudo-btn2"><strong>R$18,00</strong> /passeio/cachorro</button>
-                <p class="servico-palavra"><em>Dia do parque</em></p>
-                <p>No Dia do Parque, reunimos pets para uma jornada de brincadeiras e atividades ao ar livre, promovendo saúde, interação e momentos felizes em um ambiente pet-friendly.</p>
-                <button class="conteudo-btn2"><strong>R$32,00</strong> /dia/cachorro</button>
+
+
+                <div class="servico">
+                    <p class="servico-palavra"><em>Passeio solo</em></p>
+                    <p>Oferecemos passeios individuais, dedicados exclusivamente ao seu pet, proporcionando atenção personalizada e um tempo de qualidade ao ar livre.</p>
+                    <button class="conteudo-btn2" onclick="adicionarCarrinho('Passeio solo', 25.00)"><strong>R$25,00</strong> /passeio/cachorro</button>
+                </div>
+
+                <div class="servico">
+                    <p class="servico-palavra"><em>Passeio em grupo</em></p>
+                    <p>Socialização e diversão estão garantidas nos nossos passeios em grupo, onde os pets compartilham experiências animadas e criam laços de amizade em meio à natureza.</p>
+                    <button class="conteudo-btn2" onclick="adicionarCarrinho('Passeio em grupo', 18.00)"><strong>R$18,00</strong> /passeio/cachorro</button>
+                </div>
+
+                <div class="servico">
+                    <p class="servico-palavra"><em>Dia do parque</em></p>
+                    <p>No Dia do Parque, reunimos pets para uma jornada de brincadeiras e atividades ao ar livre, promovendo saúde, interação e momentos felizes em um ambiente pet-friendly.</p>
+                    <button class="conteudo-btn2" onclick="adicionarCarrinho('Dia do parque', 32.00)"><strong>R$32,00</strong> /dia/cachorro</button>
+                </div>
+
+                <!-- Adicionando Pacotes -->
+                <div class="servico">
+                    <p class="servico-palavra"><em>Pacote Mensal</em></p>
+                    <p>Assine o nosso pacote mensal e garanta passeios regulares para o seu pet com um preço especial.</p>
+                    <button class="conteudo-btn2" onclick="adicionarCarrinho('Pacote Mensal', 230.00)"><strong>R$230,00</strong> /mês</button>
+                </div>
+
+                <div class="servico">
+                    <p class="servico-palavra"><em>Pacote Anual</em></p>
+                    <p>Garanta o cuidado do seu pet o ano todo com nosso pacote anual, oferecendo passeios regulares com um valor reduzido.</p>
+                    <button class="conteudo-btn2" onclick="adicionarCarrinho('Pacote Anual', 1650.00)"><strong>R$1.650,00</strong> /ano</button>
+                </div>
+
             </div>
         </section>
 
@@ -64,6 +91,7 @@
             </div>
             <img src="./assets/images/cachorro-exigencia.svg" alt="">
         </section>
+
         <section class="conteudo-contato">
             <img src="./assets/images/cachorro-contato.svg" alt="Cachorro com orelha em pé">
             <div class="conteudo-contato-escrito">
@@ -89,7 +117,6 @@
         </ul>
     </nav>
     </footer>
-        </main>
 
 </body>
 </html>
