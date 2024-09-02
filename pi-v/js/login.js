@@ -1,4 +1,3 @@
-const baseUrl = 'http://localhost:8080'; 
 var apiUrl = `${baseUrl}/login/auth`;
 var form = $("#formLogin");
 document.getElementById('btnEntrar').addEventListener('click', function(e){
