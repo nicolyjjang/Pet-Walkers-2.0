@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const postContato  = require('../controller/contato');
+const postNovidades  = require('../controller/blog');
 
-router.post("/", postContato);
+router.post("/", postNovidades);
 
 module.exports = router;

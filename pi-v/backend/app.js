@@ -52,12 +52,14 @@ function chamarRotas() {
     const walkerRoutes = require('./routes/walker.js');
     const loginRoutes = require('./routes/login.js');
     const contatoRoutes = require('./routes/contato.js');
+    const blogRoutes = require('./routes/blog.js');
 
     // Use as rotas definidas no arquivo cliente.js
     app.use('/cliente',clienteRoutes);
     app.use('/walker', walkerRoutes);
     app.use('/login', loginRoutes);
-    app.use(contatoRoutes);
+    app.use('/contato', contatoRoutes);
+    app.use('/blog', blogRoutes);
 }
 function sincronizarDB() {
 

@@ -23,7 +23,6 @@ function obterSessao() {
         console.error('Erro ao verificar a sessão:', error);
     }
 }  
-
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('header');
     obterSessao().then(sessao => {
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
         .catch(error => {
             console.log('Error: ' + error)
-            window.location.href = '/problemas_tecnicos.html';
+            //window.location.href = '/problemas_tecnicos.html';
         })
 
     function carregarHeader(sessao) {
