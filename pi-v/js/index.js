@@ -11,6 +11,18 @@ function logout() {
         });
     window.location.href = `login.html`;
 };  
+function obterSessao() {
+    try {
+        axios.defaults.withCredentials = true;
+        return axios.get(apiUrlSession)
+            .then(response => {
+                console.log('Sessao: ' + JSON.stringify(response))
+                return response.data.user;
+            })
+    } catch (error) {
+        console.error('Erro ao verificar a sessão:', error);
+    }
+}  
 
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('header');
@@ -55,16 +67,4 @@ document.addEventListener('DOMContentLoaded', function () {
             `);
         }
     }
-    function obterSessao() {
-        try {
-            axios.defaults.withCredentials = true;
-            return axios.get(apiUrlSession)
-                .then(response => {
-                    console.log('Sessao: ' + JSON.stringify(response))
-                    return response.data.user;
-                })
-        } catch (error) {
-            console.error('Erro ao verificar a sessão:', error);
-        }
-    }  
 });

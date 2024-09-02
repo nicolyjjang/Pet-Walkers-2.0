@@ -1,25 +1,7 @@
-const baseUrl = 'http://localhost:8080';
-const apiUrlSession = `${baseUrl}/login/session`;
-const apiUrlLogout = `${baseUrl}/login/logout`;
 const apiUrlAtualiza = `${baseUrl}/walker/updateWalker`;
 var form = $("#personal-info-form");
-var id;
 
-function logout() {
-    // destruir sessao
-    axios.post(apiUrlLogout)
-        .then(response => {
-            console.log(response);
-            document.getElementById('btnLogin').disabled = false;
-            verificaSessao();
-        })
-        .catch(error => {
-            alert('Erro ao encerrar sessão:', error);
-        });
-    window.location.href = `login.html`;
-};
 function carregarDadosWalker(walker) {
-
     document.getElementById('profile-name').textContent = walker.nome_tutor;
     document.getElementById('profile-email').textContent = walker.usuario.email;
     document.getElementById('nome').value = walker.nome_tutor;
@@ -27,43 +9,8 @@ function carregarDadosWalker(walker) {
     document.getElementById('email').value = walker.usuario.email;
     document.getElementById('telefone').value = walker.telefone;
     document.getElementById('endereco').value = walker.endereco;
-    //document.getElementById('disponibilidade').value = walker.disponibilidade;
 }
 
-function verificaSessao() {
-    try {
-        axios.defaults.withCredentials = true;
-        axios.get(apiUrlSession)
-            .then(response => {
-                if (response.data.user) {
-                    const idUsuario = response.data.user.id;
-                    id = idUsuario;    
-                    var apiUrlWalker = `${baseUrl}/walker/user/${idUsuario}`;
-                    axios.get(apiUrlWalker)
-                        .then(response => {
-                            const walker = response.data;
-                            carregarDadosWalker(walker);
-                            document.getElementById('btnLogin').disabled = true;
-                            document.getElementById('loginSection').style.display = 'none';
-                            document.body.style.visibility = 'visible';
-                        })
-                        .catch(error => {
-                            alert('Erro ao carregar usuario: '+ error.message)
-                            window.location.href = `pagina404.html`;
-                        });
-                } else {
-                    alert('Não encontrada Sessão Ativa')
-                    window.location.href = `pagina404.html`;
-                }
-            })
-            .catch(error => {
-                console.log(error);
-                alert('Erro ao fazer a requisição de sessão:', error);
-            });
-    } catch (error) {
-        console.error('Erro ao verificar a sessão:', error);
-    }
-}
 document.getElementById('btnAtualizar').addEventListener('click', function (e) {
     e.preventDefault();
     // Jquery para validar conteudo do formulário apos o submit
@@ -91,12 +38,11 @@ document.getElementById('btnAtualizar').addEventListener('click', function (e) {
 }, false);
 function enviar() {
     if (form.valid()) {
-        verificaSessao();
-        atualizarWalker(id);
+        atualizarWalker();
         return false;
     }
 };
-function atualizarWalker(idUsuario) {
+function carregarDadosSessaoeAtualiza(idUsuario) {
     const inputElementName = document.getElementById('nome');
     const inputElementCpf = document.getElementById('cpf');
     const inputElementTelefone = document.getElementById('telefone');
@@ -109,7 +55,6 @@ function atualizarWalker(idUsuario) {
     const inputValueTelefone = inputElementTelefone.value;
     const inputValueEmail = inputElementEmail.value;
     const inputValueEndereco = inputElementEndereco.value;
-
 
     const walker = {
         id: idUsuario,
@@ -132,7 +77,41 @@ function atualizarWalker(idUsuario) {
         .catch(error => {
             alert('Erro ao fazer a requisição de login. Verificar com o suporte.', error);
         });
+}
+function atualizarWalker() {
+    obterSessao().then(user => {
+        if (user.id) {
+            carregarDadosSessaoeAtualiza(user.id)
+        } else {
+            alert('Não encontrada Sessão Ativa')
+            window.location.href = `pagina404.html`;
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao verificar a sessão:', error);
+    })
 };
-document.addEventListener('DOMContentLoaded', function() {
-    verificaSessao();
+document.addEventListener('DOMContentLoaded', function () {
+    obterSessao().then(user => {
+        if (user.id) {
+            var apiUrlWalker = `${baseUrl}/walker/user/${user.id}`;
+            axios.get(apiUrlWalker)
+                .then(response => {
+                    const walker = response.data;
+                    carregarDadosWalker(walker);
+                    document.body.style.visibility = 'visible';
+                })
+                .catch(error => {
+                    alert('Erro ao carregar usuario: ' + error.message)
+                    window.location.href = `pagina404.html`;
+                });
+        } else {
+            alert('Não encontrada Sessão Ativa')
+            window.location.href = `pagina404.html`;
+        }
+    })
+        .catch(error => {
+            console.error('Erro ao verificar a sessão:', error);
+        })
+
 });
