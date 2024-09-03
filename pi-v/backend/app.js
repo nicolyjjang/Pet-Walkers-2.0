@@ -14,7 +14,7 @@ const nodeEnv = process.env.NODE_ENV;
 const secret = process.env.SESSION_SECRET;
 
 // Verifica se o ambiente está apontando para máquina do desenvolvedor
-if (nodeEnv === ('local')) {
+if (nodeEnv === ('local') || nodeEnv === null) {
     // Verifica se ja existe um database pet_walkers em desenvolvimento local antes de iniciar
     const mysql = require('mysql2/promise');
     mysql.createConnection({
@@ -32,6 +32,7 @@ if (nodeEnv === ('local')) {
         })
     });
 } else {
+    // Caso não seja desenvolvimento local vai utilizar as credenciais do ambiente (desenv, homologação, produção, etc)
     sincronizarDB();
     chamarRotas();
 }
@@ -47,14 +48,12 @@ app.listen(8080, () => {
     console.log("Servidor iniciado na porta 8080: https://localhost:8080");
 });
 function chamarRotas() {
-    // Importe o arquivo de rotas do Cadastro de Clientes
     const clienteRoutes = require('./routes/cliente.js');
     const walkerRoutes = require('./routes/walker.js');
     const loginRoutes = require('./routes/login.js');
     const contatoRoutes = require('./routes/contato.js');
     const blogRoutes = require('./routes/blog.js');
 
-    // Use as rotas definidas no arquivo cliente.js
     app.use('/cliente',clienteRoutes);
     app.use('/walker', walkerRoutes);
     app.use('/login', loginRoutes);

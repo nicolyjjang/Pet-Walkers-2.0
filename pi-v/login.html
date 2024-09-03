@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,28 +14,28 @@
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <!-- Cabeçalho-->
-    <header id="header"></header>
 
+<body class="info-pessoais-cliente">
+    <!-- Cabeçalho template-->
+    <header id="header"></header>
     <main>
         <hr>
         <section class="login">
             <div class="login-escrito">
                 <h4>Log In</h4>
             </div>
-            <form class="mini-formulario" id="formLogin"> 
+            <form class="mini-formulario" id="formLogin">
                 <label class="label-mini" for="email">E-mail *</label>
                 <input class="input-mini" type="email" id="email" name="email" placeholder="E-mail" required>
                 <label class="label-mini2" for="senha">Senha *</label>
-                <input class="input-mini" type="password" id="senha" name="senha"placeholder="Senha" required><br>
-    
+                <input class="input-mini" type="password" id="senha" name="senha" placeholder="Senha" required><br>
+
                 <label for="tipo">Você é:</label><br>
                 <input type="radio" id="cliente" name="tipo" value="cliente">
                 <label for="cliente">Cliente</label>
                 <input type="radio" id="walker" name="tipo" value="walker">
                 <label for="walker">Walker</label><br>
-                
+
                 <a href="#"><strong>Esqueceu sua senha?</strong></a><br>
                 <button class="conteudo-btn" id="btnEntrar">Entrar</button><br>
                 <a href="cadastro.html">Criar uma conta</a>
@@ -43,7 +44,7 @@
                     <button class="btn-login"><a href="cadastro-walker.html">Walker</a></button>
                     <button class="btn-login"><a href="cadastro-cliente.html">Cliente</a></button>
                 </div>
-                
+
                 <p>* campos obrigatórios</p>
             </form>
             <p>Ao fazer login na Pets Walkers você concorda com nossos Termos de uso e Política de Privacidade</p>
@@ -63,8 +64,9 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/login.js"></script>
 </body>
+
 </html>

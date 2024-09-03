@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,24 +17,10 @@
     <script src="./js/index.js" defer></script>
 
 </head>
+
 <body>
-    <!-- Cabeçalho-->
-    <header>
-        <div class="logo">
-             <img src="./assets/images/logo.svg" alt="Logo">
-             <h2 class="titulo-logo">Pets Walkers</h2>
-        </div>
- 
-        <div class="links">
-             <a href="home.html">Home</a>
-             <a href="sobre.html">Sobre</a>
-             <a href="servico.html">Serviços</a>
-             <a href="blog.html">Blog</a>
-             <a href="contato.html">Contato</a>
-        </div>
-        <button class="btn-iniciar"><a href="login.html">Log In</a></button>
-        <a href="carrinho.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
-    </header>
+    <!-- Cabeçalho template-->
+    <header id="header"></header>
 
     <main>
         <hr>
@@ -45,7 +32,7 @@
                     <label for="payment">Forma de pagamento:</label>
                     <input class="tipo-pagamento" type="radio" name="pagamento" value="Cartao" checked> Cartão
                 </div>
-    
+
                 <div class="form-group">
                     <label for="card-number">Número do cartão</label>
                     <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9101 1121" required>
@@ -58,19 +45,20 @@
                     <div class="form-group">
                         <label for="cvv">CVV</label>
                         <input type="number" id="cvv" name="cvv" placeholder="123" required>
-                    </div>  
+                    </div>
                 </div>
-                
+
                 <div class="pagamento-salvo">
                     <input type="checkbox" id="salvar" name="salvar" value="salvar">
                     <label class="salvar" for="salvar">Salvar detalhes do cartão</label>
                 </div>
-    
+
                 <button id="btn-pagamento" class="btn-pagamento" type="submit">Pague R$0,00</button>
             </form>
-            <p class="pagamento-p">Os seus dados pessoais serão utilizados para processar a sua encomenda, apoiar a sua experiência neste site e para outros fins descritos na nossa política de privacidade.</p>
+            <p class="pagamento-p">Os seus dados pessoais serão utilizados para processar a sua encomenda, apoiar a sua
+                experiência neste site e para outros fins descritos na nossa política de privacidade.</p>
         </section>
-    
+
         <aside class="pagamento-resumo">
             <h2 class="resumo-titulo">Resumo do Pedido</h2>
             <hr>
@@ -92,7 +80,7 @@
             </div>
         </aside>
     </main>
-    
+
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 - Todos os direitos reservados</p>
@@ -106,4 +94,5 @@
         </nav>
     </footer>
 </body>
+
 </html>

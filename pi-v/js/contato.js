@@ -1,4 +1,3 @@
-const baseUrl = 'http://localhost:8080';
 var apiUrl = `${baseUrl}/contato`;
 var form = $("#formContato");
 $('#divError').empty();
@@ -17,7 +16,6 @@ $("#formContato").validate({
         message: "Favor preencher a mensagem",
         endereco: "Favor preencher seu endereco",
     },
-    errorElement: "div",
     errorPlacement: function (error, element) {
         error.insertBefore(element);
     }
