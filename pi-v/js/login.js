@@ -58,6 +58,7 @@ async function login() {
         .then(response => {
             const data = (response.data);
             console.log(data.id);
+            localStorage.clear(); 
             if (data.tipo === 'walker') {
                 window.location.href = `informacoes-pessoais-walker.html`;
             } else if (data.tipo = 'cliente') {
@@ -67,7 +68,7 @@ async function login() {
         .catch(error => {
             if (error.response) {
                 if (error.response.data) {
-                    alert(error.response.data);
+                    alert(error.response.data.mensagem);
                 } else {
                     alert('Erro ao fazer a requisição de login. Verificar com o suporte.', error);
                 }

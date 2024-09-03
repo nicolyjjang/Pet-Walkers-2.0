@@ -5,10 +5,12 @@ const apiUrlLogout = `${baseUrl}/login/logout`;
 function logout() {
     axios.post(apiUrlLogout)
         .then(response => {
+            localStorage.clear(); 
         })
         .catch(error => {
             alert('Erro ao encerrar sessão:', error);
         });
+
     window.location.href = `login.html`;
 };  
 function obterSessao() {
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
         .catch(error => {
             console.log('Error: ' + error)
-            //window.location.href = '/problemas_tecnicos.html';
+            window.location.href = '/problemas_tecnicos.html';
         })
 
     function carregarHeader(sessao) {

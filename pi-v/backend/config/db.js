@@ -9,8 +9,8 @@ const sequelize = new Sequelize("pet_walkers", "root", "password", {
 sequelize.authenticate()
     .then(function () {
         console.log("Conexão com o bd realizada com sucesso!")
-    }).catch(function () {
-        console.log("Erro: Conexão com o bd não realizada com sucesso!")
+    }).catch(function (error) {
+        console.log("Erro: Conexão com o bd não realizada com sucesso!" + error)
     })
 
 module.exports = sequelize;

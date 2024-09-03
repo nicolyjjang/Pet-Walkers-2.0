@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
-
-    <script src="./js/index.js" defer></script>
-
 </head>
 
 <body>
@@ -27,7 +24,7 @@
         <section class="pagamento">
             <h2 class="pagamento-titulo">Pagamento</h2>
             <hr>
-            <form id="payment-form">
+            <form id="formPagamento">
                 <div class="form-group">
                     <label for="payment">Forma de pagamento:</label>
                     <input class="tipo-pagamento" type="radio" name="pagamento" value="Cartao" checked> Cartão
@@ -35,12 +32,12 @@
 
                 <div class="form-group">
                     <label for="card-number">Número do cartão</label>
-                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9101 1121" required>
+                    <input type="text" id="card-number" name="card_number" placeholder="1234 5678 9101 1121" required>
                 </div>
                 <div class="pagamento-dados">
                     <div class="form-group">
                         <label for="expiration-date">Data de validade</label>
-                        <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+                        <input type="text" id="expiration-date" name="expiration_date" placeholder="MM/YY" required>
                     </div>
                     <div class="form-group">
                         <label for="cvv">CVV</label>
@@ -80,7 +77,11 @@
             </div>
         </aside>
     </main>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/carrinho.js"></script>
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 - Todos os direitos reservados</p>
