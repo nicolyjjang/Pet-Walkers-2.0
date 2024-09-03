@@ -1,4 +1,3 @@
-const baseUrl = 'http://localhost:8080'; 
 var apiUrl = `${baseUrl}/walker`;
 var form = $("#formCadastro");
 document.getElementById('btnCancelar').addEventListener('click', function(e){

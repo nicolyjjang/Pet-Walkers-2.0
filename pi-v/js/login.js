@@ -1,29 +1,29 @@
 var apiUrl = `${baseUrl}/login/auth`;
 var form = $("#formLogin");
-document.getElementById('btnEntrar').addEventListener('click', function(e){
-  e.preventDefault();
-  // Validação de radio button customizada
-  $.validator.addMethod("radioRequired", function() {
-    return $('input[name="tipo"]:checked').length > 0;
-  }, "Favor escolher um tipo de usuário");  
-  // Jquery para validar conteudo do formulário apos o submit
-  $("#formLogin").validate({
-    rules: {
-        tipo: {radioRequired : true},
-        email: "required",
-        senha: "required"
-    },
-    messages: {
-        tipo: { radioRequired : "Favor escolher um tipo de usuário"},
-        email: "Favor preencher seu e-mail corretamente",
-        senha: "Favor preencher sua senha"
-    },
-    errorElement: "div",
-    errorPlacement: function(error, element) {
-        element.before(error);     
-    }    
-});
-enviar();
+document.getElementById('btnEntrar').addEventListener('click', function (e) {
+    e.preventDefault();
+    // Validação de radio button customizada
+    $.validator.addMethod("radioRequired", function () {
+        return $('input[name="tipo"]:checked').length > 0;
+    }, "Favor escolher um tipo de usuário");
+    // Jquery para validar conteudo do formulário apos o submit
+    $("#formLogin").validate({
+        rules: {
+            tipo: { radioRequired: true },
+            email: "required",
+            senha: "required"
+        },
+        messages: {
+            tipo: { radioRequired: "Favor escolher um tipo de usuário" },
+            email: "Favor preencher seu e-mail corretamente",
+            senha: "Favor preencher sua senha"
+        },
+        errorElement: "div",
+        errorPlacement: function (error, element) {
+            element.before(error);
+        }
+    });
+    enviar();
 }, false);
 
 // Valida e Submete o formulário
@@ -44,7 +44,7 @@ async function login() {
     var tipo;
     if ($('input[id="cliente"]:checked').length > 0) {
         tipo = 'cliente';
-    }else if($('input[id="walker"]:checked').length > 0){
+    } else if ($('input[id="walker"]:checked').length > 0) {
         tipo = 'walker';
     }
     const login = {
@@ -58,13 +58,21 @@ async function login() {
         .then(response => {
             const data = (response.data);
             console.log(data.id);
-         if(data.tipo === 'walker'){
+            if (data.tipo === 'walker') {
                 window.location.href = `informacoes-pessoais-walker.html`;
-            }else if (data.tipo = 'cliente'){
+            } else if (data.tipo = 'cliente') {
                 window.location.href = `informacoes-pessoais-cliente.html`;
             };
         })
         .catch(error => {
-            alert('Erro ao fazer a requisição de login. Verificar com o suporte.', error);
+            if (error.response) {
+                if (error.response.data) {
+                    alert(error.response.data);
+                } else {
+                    alert('Erro ao fazer a requisição de login. Verificar com o suporte.', error);
+                }
+            } else {
+                alert('Erro ao fazer a requisição de login. Verificar com o suporte.', error);
+            }
         });
 }

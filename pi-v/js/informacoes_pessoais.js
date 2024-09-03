@@ -181,9 +181,10 @@ function atualizar() {
         })
 };
 document.addEventListener('DOMContentLoaded', function () {
+    const contexto = window.pageContext;
     obterSessao().then(user => {
         if (user.id) {
-            if (user.tipo === 'cliente') {
+            if (contexto === 'cliente') {
                 var apiUrlCliente = `${baseUrl}/cliente/user/${user.id}`;
                 axios.get(apiUrlCliente)
                     .then(response => {
@@ -192,10 +193,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         document.body.style.visibility = 'visible';
                     })
                     .catch(error => {
-                        alert('Erro ao carregar usuario: ' + error.message)
-                        window.location.href = `pagina404.html`;
+                        if (error.response) {
+                            alert('Erro ao carregar usuario: ' + error.response.data.error)
+                        } else {
+                            alert('Erro ao carregar usuario: ' + error.message)
+                        }
                     });
-            } else {
+            } else if (contexto === 'walker') {
                 var apiUrlWalker = `${baseUrl}/walker/user/${user.id}`;
                 axios.get(apiUrlWalker)
                     .then(response => {
@@ -204,9 +208,16 @@ document.addEventListener('DOMContentLoaded', function () {
                         document.body.style.visibility = 'visible';
                     })
                     .catch(error => {
-                        alert('Erro ao carregar usuario: ' + error.message)
+                        if (error.response) {
+                            alert('Erro ao carregar usuario: ' + error.response.data.error)
+                        } else {
+                            alert('Erro ao carregar usuario: ' + error.message)
+                        }
                         window.location.href = `pagina404.html`;
                     });
+            } else {
+                alert('Não foi possivel associar rota correta. Entrar em contato com o suporte.')
+                window.location.href = `pagina404.html`;
             }
         } else {
             alert('Não encontrada Sessão Ativa')

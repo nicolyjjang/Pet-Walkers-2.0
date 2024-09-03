@@ -24,7 +24,7 @@ const postLogin = async (req, res, next) => {
             console.log('Login Session: ' + req.session.user)
             res.status(200).json(obj);
         } else {
-            res.status(401).json('Usuário/Senha incorreto');
+            res.status(401).json({ mensagem: 'Usuário/Senha incorreto' });
         }
     } catch (error) {
         console.error('Erro ao consultar usuario/senha:', error);
