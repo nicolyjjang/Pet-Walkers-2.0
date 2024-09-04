@@ -1,3 +1,4 @@
+//Expressão regular que obriga o usuario a digitar o cvv no formato 999
 function formatarCVV(event) {
     const input = event.target;
     let value = input.value;
@@ -21,6 +22,7 @@ function formatarCVV(event) {
         input.classList.remove('invalid');
     }
 }
+//Expressão regular que obriga o usuario a digitar o cartão de crédito no formato 9999 9999 9999 9999
 function formatarCartaoCredito(event) {
     const input = event.target;
     let value = input.value;
@@ -47,6 +49,7 @@ function formatarCartaoCredito(event) {
         input.classList.remove('invalid');
     }
 }
+//Expressão regular que obriga o usuario a digitar a data de expiração no formato MM/YY
 function formatarDataExpiracao(event) {
     const input = event.target;
     let value = input.value;
