@@ -764,7 +764,7 @@ a{
 /* Carrinho */
 .pagamento {
     margin-left: 100px;
-    line-height: 30px;
+    line-height: 20px;
 }
 
 .pagamento hr {
@@ -791,10 +791,15 @@ label {
 
 input[type="text"], input[type="number"], input[type="datetime"], .tipo-pagamento {
     height: 35px;
-    padding: 8px;
+    padding: 4px;
     font-size: 14px;
     box-sizing: border-box;
     color: #ACACAC;
+}
+
+input#card-holder {
+    width: 100%; 
+    max-width: 500px; 
 }
 
 input#card-number {
@@ -802,8 +807,7 @@ input#card-number {
     max-width: 500px; 
 }
 
-input#expiration-date,
-input#cvv {
+input#expiration-date, input#cvv {
     width: 100%;
     max-width: 200px; 
     gap: 100px;
@@ -1180,6 +1184,61 @@ table tr:hover {
     background-color: #f1f1f1;
 }
 
+/* Forma de pagamento */
+.dataTables_length {
+    margin-bottom: 15px; 
+    font-size: 16px;
+}
+
+.dataTables_length label {
+    font-weight: normal; 
+    color: #333;
+}
+
+.dataTables_length select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.dataTables_length {
+    display: none;
+}
+
+.dataTables_filter {
+    display: none;
+}
+
+/* paginação */
+.dataTables_paginate {
+    margin-top: 15px;
+}
+
+.dataTables_paginate .paginate_button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.dataTables_paginate .paginate_button:hover {
+    background-color: #f1f1f1;
+}
+
+.dataTables_paginate .paginate_button.current {
+    background-color: #8abf63;
+    color: white;
+    border: 1px solid #8abf63;
+}
+
+
 /* Logout */
 .Logout {
     display: flex; 
@@ -1272,3 +1331,4 @@ table tr:hover {
 .error404 a:hover {
     text-decoration: underline; 
 }
+

@@ -9,11 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
 
-    <script src="./js/index.js"></script>
+    <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#payment-table').DataTable();
+        });
+    </script>
 
 </head>
 
@@ -57,21 +67,21 @@
 
     <main class="informacoes">
         <h1>Formas de Pagamento</h1>
-        <form id="payment-form">
-            <label for="cartao">Número do Cartão:</label>
-            <input type="text" id="cartao" name="cartao" placeholder="#### #### #### ####" required>
-            
-            <label for="nome-titular">Nome do Titular:</label>
-            <input type="text" id="nome-titular" name="nome-titular" required>
-            
-            <label for="validade">Validade:</label>
-            <input type="text" id="validade" name="validade" placeholder="MM/AA" required>
-            
-            <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" name="cvv" required>
-            
-            <button type="submit">Salvar Formas de Pagamento</button>
-        </form>
+
+        <table id="payment-table" class="display">
+            <thead>
+                <tr>
+                    <th>Número do Cartão</th>
+                    <th>Nome do Titular</th>
+                    <th>Validade</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- O conteúdo será carregado via back-end -->
+            </tbody>
+        </table>
+
     </main>
 
     <!-- Rodapé -->
