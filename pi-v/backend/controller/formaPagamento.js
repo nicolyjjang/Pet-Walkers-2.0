@@ -13,8 +13,8 @@ const postFormaPagamento = async (req, res) => {
         });
         res.status(201).json(newFormaPagamento); // Retorne o usuário Walker 
     } catch (error) {
-        console.error('Erro ao criar Pagamento:', error);
-        res.status(500).json({ error: 'Erro ao criar Pagamento' });
+        console.error('Erro ao criar Forma de Pagamento:', error);
+        res.status(500).json({ error: 'Erro ao criar Forma de Pagamento' });
     }
 };
 

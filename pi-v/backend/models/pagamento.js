@@ -1,31 +1,27 @@
 const Sequelize = require('sequelize')
 const db = require('../config/db')
 
-const FormaPagamento = db.define('forma_pagamento', {
+const Pagamento = db.define('pagamento',{
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
-    id_usuario: {
+    id_pedido: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull:false,
         references: {
-            model: 'usuarios',
+            model: 'pedidos',
             key: 'id'
-        }
+        }          
     },
-    tipo: {
+    numero_cartao: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    numero_cartao: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
     cvv: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
     },
     mes_expiracao: {
@@ -35,7 +31,15 @@ const FormaPagamento = db.define('forma_pagamento', {
     ano_expiracao: {
         type: Sequelize.STRING,
         allowNull: false,
-    },
+    },    
+    valor: { 
+        type: Sequelize.INTEGER,
+        allowNull:false
+    },    
+    status: {
+        type: Sequelize.STRING,
+        allowNull:false        
+    }
 })
 
-module.exports = FormaPagamento;
+module.exports = Pagamento;
