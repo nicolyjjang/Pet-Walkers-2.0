@@ -26,7 +26,6 @@ const getFormasPagamento = async (req, res) => {
                 id_usuario: id_usuario
             }
         })
-        console.log(formasPagamento)
         res.json(formasPagamento)
     } catch (error) {
         console.error('Erro ao buscar formas de pagamento por usuário', error);

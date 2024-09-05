@@ -21,7 +21,6 @@ const postLogin = async (req, res, next) => {
                 if (err) return next(err)
                     console.log(err);
             })
-            console.log('Login Session: ' + req.session.user)
             res.status(200).json(obj);
         } else {
             res.status(401).json({ mensagem: 'Usuário/Senha incorreto' });
@@ -35,7 +34,6 @@ const postLogin = async (req, res, next) => {
 const getSession = (req, res) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:8000"); //habilita endereço de servidor frontend
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");   
-    console.log('Get Session: ' + req.session.user)
 
     if (req.session.user) {
         res.send({ user: req.session.user });

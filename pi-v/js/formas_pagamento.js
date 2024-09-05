@@ -1,3 +1,11 @@
+$(document).ready(function() {
+    $('#tabela_forma_pagamento').DataTable({
+        language: {
+            url: "js/lib/pt_br.json"
+        }
+    });
+});
+
 function lerFormasPagamento() {
     document.body.style.visibility = 'visible';
     obterSessao().then((user) => {

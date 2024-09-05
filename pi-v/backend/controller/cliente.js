@@ -4,7 +4,6 @@ const User = require('../models/usuario');
 const getCliente = async (req, res) => {
     try {
         const id = req.params.id;
-        console.log('id do cliente: ' + id)
         const cliente = await Cliente.findOne({
             where: {
                 id: id

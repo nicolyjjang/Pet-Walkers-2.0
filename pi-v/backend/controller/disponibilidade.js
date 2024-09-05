@@ -38,7 +38,6 @@ const getDisponibilidade = async (req, res) => {
                 id: id_usuario
             }
         })
-        console.log(disponibilidade)
         res.json(disponibilidade)
     } catch (error) {
         console.error('Erro ao buscar disponibilidade por usuáro', error);

@@ -147,6 +147,7 @@ function gravarPagamento(pedido) {
     const inputValueCardNumber = inputElementCardNumber.value;
     const inputValueExpirationDate = inputElementExpirationDate.value;
     const inputValueCVV = inputElementCVV.value;
+    const inputValueNomeTitular = inputElementNomeTitular.value;
     const numeroCartao = inputValueCardNumber.replace(/\s+/g, '');
     const mesExpiracao = inputValueExpirationDate.slice(0, 2);
     const anoExpiracao = inputValueExpirationDate.slice(3, 5);
@@ -159,7 +160,7 @@ function gravarPagamento(pedido) {
         ano_expiracao: anoExpiracao,
         valor: pedido.valor_total,
         status: 'processado',
-        nome_titular: inputElementNomeTitular
+        nome_titular: inputValueNomeTitular
     }
 
     axios.post(apiUrlincluirPagamento, pagamento)
@@ -171,7 +172,7 @@ function gravarPagamento(pedido) {
                 cvv: inputValueCVV,
                 mes_expiracao: mesExpiracao,
                 ano_expiracao: anoExpiracao,
-                nome_titular: inputElementNomeTitular
+                nome_titular: inputValueNomeTitular
             };
             tratarFormaDePagamentoCartao(dadosCartao)
         })
