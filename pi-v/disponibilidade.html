@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,34 +17,13 @@
 
 </head>
 
-<body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="logo">
-            <img src="./assets/images/logo.svg" alt="Logo">
-            <h2 class="titulo-logo">Pets Walkers</h2>
-        </div>
-
-        <div class="links">
-            <a href="home.html">Home</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="servico.html">Serviços</a>
-            <a href="blog.html">Blog</a>
-            <a href="contato.html">Contato</a>
-        </div>
-        <button class="btn-iniciar"><a href="login.html">Log In</a></button>
-        <a href="carrinho.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>
-    </header>
-
-    <hr>
-    <div class="header-container">
-        <h1>Contas - Pet Walkers</h1>
-        <a href="logout.html" class="logout-button">Sair</a>
-    </div>
-
+<body class ="info-pessoais-walker">
+    <!-- Cabeçalho template--> 
+    <header id="header"></header>    
     <div class="sidebar">
         <div class="profile-section">
-            <img src="https://thumbs.dreamstime.com/b/%C3%ADcone-de-usu%C3%A1rio-m%C3%ADdia-social-vetor-imagem-perfil-do-avatar-padr%C3%A3o-retrato-182347582.jpg" alt="Foto do Walker" class="profile-pic">
+            <img src="https://thumbs.dreamstime.com/b/%C3%ADcone-de-usu%C3%A1rio-m%C3%ADdia-social-vetor-imagem-perfil-do-avatar-padr%C3%A3o-retrato-182347582.jpg"
+                alt="Foto do Walker" class="profile-pic">
             <h2 class="profile-name" id="profile-name">Nome do Walker</h2>
             <p class="profile-email" id="profile-email">email@walker.com</p>
         </div>
@@ -59,32 +39,40 @@
         <form id="walker-availability-form">
             <label for="segunda">Segunda-feira:</label>
             <input type="text" id="segunda" name="segunda" placeholder="Ex: 08:00 - 12:00" required>
-            
+
             <label for="terca">Terça-feira:</label>
             <input type="text" id="terca" name="terca" placeholder="Ex: 10:00 - 14:00" required>
-            
+
             <label for="quarta">Quarta-feira:</label>
             <input type="text" id="quarta" name="quarta" placeholder="Ex: 08:00 - 12:00" required>
-            
+
             <label for="quinta">Quinta-feira:</label>
             <input type="text" id="quinta" name="quinta" placeholder="Ex: 14:00 - 18:00" required>
-            
+
             <label for="sexta">Sexta-feira:</label>
             <input type="text" id="sexta" name="sexta" placeholder="Ex: 10:00 - 14:00" required>
-            
-            <button type="submit">Atualizar Disponibilidade</button>
+
+            <button type="submit" id="btnAtualizar">Atualizar Disponibilidade</button>
         </form>
     </main>
 
-<!-- Rodapé -->
-<footer>
-    <p>&copy; 2024 - Todos os direitos reservados</p>
-    <nav>
-        <ul>
-            <li><a href="#">Termos de uso</a></li>
-            <li><a href="#">Política de privacidade</a></li>
-            <li><a href="#">Sobre nós</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
-</footer>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 - Todos os direitos reservados</p>
+        <nav>
+            <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>   
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
+    <script src="js/index.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/disponibilidade.js"></script>
+</body>
+</html>

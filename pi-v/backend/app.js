@@ -56,6 +56,7 @@ function chamarRotas() {
     const pedidoRoutes = require('./routes/pedido.js');
     const pagamentoRoutes = require('./routes/pagamento.js');
     const formaPagamentoRoutes = require('./routes/formaPagamento.js');
+    const disponibilidadeRoutes = require('./routes/disponibilidade.js');
 
     app.use('/cliente',clienteRoutes);
     app.use('/walker', walkerRoutes);
@@ -65,6 +66,7 @@ function chamarRotas() {
     app.use('/pedido', pedidoRoutes);
     app.use('/pagamento', pagamentoRoutes);
     app.use('/formaPagamento', formaPagamentoRoutes);
+    app.use('/disponibilidade', disponibilidadeRoutes);
 }
 function sincronizarDB() {
 

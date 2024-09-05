@@ -2,7 +2,7 @@ const apiUrlAtualizaWalker = `${baseUrl}/walker/updateWalker`;
 const apiUrlAtualizaCliente = `${baseUrl}/cliente/updateCliente`;
 var form = $("#personal-info-form");
 
-function carregarDadosWalker(walker) {
+function carregarDadosWalker(walker,disponibilidade) {
     document.getElementById('profile-name').textContent = walker.nome_tutor;
     document.getElementById('profile-email').textContent = walker.usuario.email;
     document.getElementById('nome').value = walker.nome_tutor;
@@ -10,6 +10,9 @@ function carregarDadosWalker(walker) {
     document.getElementById('email').value = walker.usuario.email;
     document.getElementById('telefone').value = walker.telefone;
     document.getElementById('endereco').value = walker.endereco;
+    if(disponibilidade.length > 0){
+        document.getElementById('disponibilidade').value = disponibilidade;
+    }
 }
 function carregarDadosCliente(cliente) {
     document.getElementById('profile-name').textContent = cliente.nome_cliente;
@@ -180,6 +183,27 @@ function atualizar() {
             console.error('Erro ao verificar a sessão:', error);
         })
 };
+function tratarDisponibilidade(disponibilidade){
+    var disponibilidadeConcatenada = ""
+    if (disponibilidade) {
+        if(disponibilidade.segunda){
+            disponibilidadeConcatenada = `Segunda: ${disponibilidade.segunda}`
+        }
+        if(disponibilidade.terca){
+            disponibilidadeConcatenada = disponibilidadeConcatenada + ` Terça: ${disponibilidade.terca}`
+        }
+        if(disponibilidade.quarta){
+            disponibilidadeConcatenada = disponibilidadeConcatenada + ` Quarta: ${disponibilidade.quarta}`
+        }
+        if(disponibilidade.quinta){
+            disponibilidadeConcatenada = disponibilidadeConcatenada + ` Quinta: ${disponibilidade.quinta}`
+        }
+        if(disponibilidade.sexta){
+            disponibilidadeConcatenada = disponibilidadeConcatenada + ` Sexta: ${disponibilidade.sexta}`
+        }
+    }
+    return disponibilidadeConcatenada.trim();
+}
 document.addEventListener('DOMContentLoaded', function () {
     const contexto = window.pageContext;
     obterSessao().then(user => {
@@ -204,8 +228,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 axios.get(apiUrlWalker)
                     .then(response => {
                         const walker = response.data;
-                        carregarDadosWalker(walker);
-                        document.body.style.visibility = 'visible';
+                        var apiUrlDisponibilidade = `${baseUrl}/disponibilidade/${user.id}`;
+                        axios.get(apiUrlDisponibilidade)
+                            .then(disponibilidade => {
+                                carregarDadosWalker(walker, tratarDisponibilidade(disponibilidade.data));
+                                document.body.style.visibility = 'visible';
+                            })
+
                     })
                     .catch(error => {
                         if (error.response) {

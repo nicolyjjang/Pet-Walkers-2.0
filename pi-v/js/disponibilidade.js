@@ -5,12 +5,14 @@ function recuperarDisponibilidade() {
         axios.get(apiUrlDisponibilidade)
             .then(resultado => {
                 const disponibilidade = resultado.data
-                document.getElementById('segunda').textContent = disponibilidade.segunda;
-                document.getElementById('terca').textContent = disponibilidade.terca;
-                document.getElementById('quarta').textContent = disponibilidade.quarta;
-                document.getElementById('quinta').textContent = disponibilidade.quinta;
-                document.getElementById('sexta').textContent = disponibilidade.sexta;
-
+                if (disponibilidade) {
+                    document.getElementById('segunda').value = disponibilidade.segunda;
+                    document.getElementById('terca').value = disponibilidade.terca;
+                    document.getElementById('quarta').value = disponibilidade.quarta;
+                    document.getElementById('quinta').value = disponibilidade.quinta;
+                    document.getElementById('sexta').value = disponibilidade.sexta;
+                }
+                document.getElementById('profile-email').textContent = user.email;
                 //Chamar os endpoints de cliente ou walker para recuperar o nome.                 
                 if (user.tipo === 'cliente') {
                     var apiUrlCliente = `${baseUrl}/cliente/user/${user.id}`;
@@ -26,14 +28,56 @@ function recuperarDisponibilidade() {
                 }
             }).catch(error => {
                 console.error(error)
-                alert('Erro ao obter a lista de pedidos:', error);
+                alert('Erro ao obter a disponibilidade:', error);
             })
     }).catch(error => {
         console.error(error)
-        alert('Erro ao obter sessão da lista de pedidos:', error);
+        alert('Erro ao obter sessão da pagina de disponibilidade:', error);
     });
 }
-function atualizarDisponibilidade(){
+document.getElementById('btnAtualizar').addEventListener('click', function (e) {
+    e.preventDefault();
+    obterSessao().then((sessao) => {
+        atualizarDisponibilidade(sessao);
+    })
+})
+function atualizarDisponibilidade(sessaoUsuario) {
+    // Obtém o elemento de input pelo ID
+    const inputElementSegunda = document.getElementById('segunda');
+    const inputElementTerca = document.getElementById('terca');
+    const inputElementQuarta = document.getElementById('quarta');
+    const inputElementQuinta = document.getElementById('quinta');
+    const inputElementSexta = document.getElementById('sexta');
+
+
+    // Lê o valor do campo de entrada
+    const inputValueSegunda = inputElementSegunda.value;
+    const inputValueTerca = inputElementTerca.value;
+    const inputValueQuarta = inputElementQuarta.value;
+    const inputValueQuinta = inputElementQuinta.value;
+    const inputValueSexta = inputElementSexta.value;
+
+
+    const disponibilidade = {
+        id: sessaoUsuario.id,
+        segunda: inputValueSegunda,
+        terca: inputValueTerca,
+        quarta: inputValueQuarta,
+        quinta: inputValueQuinta,
+        sexta: inputValueSexta,
+
+    };
+    axios.defaults.withCredentials = true;
+    var apiUrlAtualizarDisponibilidade = `${baseUrl}/disponibilidade`;
+    axios.post(apiUrlAtualizarDisponibilidade, disponibilidade)
+        .then(response => {
+            console.log(JSON.stringify(response));
+            alert('Dados Atualizados com Sucesso!')
+            location.reload();
+        })
+        .catch(error => {
+            alert('Erro ao fazer a requisição de login. Verificar com o suporte.', error);
+        });
 }
 // Regras de Tela para Impedir digitação em formatos não permitidos
 document.getElementById('segunda').addEventListener('input', formatarDisponibilidade);
