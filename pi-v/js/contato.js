@@ -19,7 +19,9 @@ $("#formContato").validate({
     },
     errorPlacement: function (error, element) {
         error.insertBefore(element);
-    }
+    },
+        errorClass: "error"
+    
 });
 
 document.getElementById('btnEnviar').addEventListener('click', function (e) {
@@ -60,11 +62,9 @@ function contatar() {
         mensagem: textAreaValueMensagem,
         endereco: inputValueEndereco
     };
-    console.log(contato)
     //Chamada Axios para o Backend
     axios.post(apiUrl, contato)
-        .then(response => {
-            console.log(response.data); // Resposta do servidor
+        .then(() => {
             alert("Dados Enviados com Sucesso");
         })
         .then(() => {

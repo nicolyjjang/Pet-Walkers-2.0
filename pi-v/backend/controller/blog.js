@@ -17,11 +17,11 @@ Não perca nossas atualizações!`
     Newsletter.create({
         nome,
         email
-    }).then( result => {
-        sendMail(email, 'PetWalkers News!', corpoEmail).then( result => {
-            console.log('enviou resposta' + result)
+    }).then(() => {
+        sendMail(email, 'PetWalkers News!', corpoEmail).then(result => {
+            res.send(result);
         })
-        res.send(result);
+
     }).catch(error => {
         console.log(error)
         if (error.name === 'SequelizeUniqueConstraintError') {

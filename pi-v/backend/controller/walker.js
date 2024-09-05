@@ -29,7 +29,6 @@ const postWalker = async (req, res) => {
 const getWalker = async (req, res) => {
     try {
         const id = req.params.id;
-        console.log('id: ' + JSON.stringify(id));
         const walker = await Walker.findOne({
             where: {
                 id: id

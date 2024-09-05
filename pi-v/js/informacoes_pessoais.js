@@ -21,8 +21,8 @@ function carregarDadosCliente(cliente) {
     document.getElementById('cpf').value = cliente.cpf;
     document.getElementById('email').value = cliente.usuario.email;
     document.getElementById('telefone').value = cliente.telefone;
-    document.getElementById('pet1').value = cliente.pet1;
-    document.getElementById('idade1').value = cliente.idade;
+    document.getElementById('pet').value = cliente.pet;
+    document.getElementById('idade').value = cliente.idade;
     document.getElementById('endereco').value = cliente.endereco;
 }
 const botaoAtualizarCliente = document.querySelector('#btnAtualizarCliente');
@@ -38,8 +38,8 @@ if (botaoAtualizarCliente) {
                 telefone: "required",
                 cpf: "required",
                 senha: "required",
-                pet1: "required",
-                idade1: "required",
+                pet: "required",
+                idade: "required",
                 endereco: "required"
             },
             messages: {
@@ -48,13 +48,14 @@ if (botaoAtualizarCliente) {
                 telefone: "Favor preencher seu telefone",
                 cpf: "Favor preencher seu cpf",
                 senha: "Favor preencher sua senha",
-                pet1: "Favor preencher seu pet1",
-                idade1: "Favor preencher sua idade",
+                pet: "Favor preencher seu pet",
+                idade: "Favor preencher sua idade",
                 endereco: "Favor preencher seu endereco",
             },
             errorPlacement: function (error, element) {
                 element.before(error);
-            }
+            },
+            errorClass: "error"
         });
         enviar();
     }, false);
@@ -98,8 +99,8 @@ function carregarDadosSessaoeAtualiza(usuario) {
         const inputElementCpf = document.getElementById('cpf');
         const inputElementTelefone = document.getElementById('telefone');
         const inputElementEmail = document.getElementById('email');
-        const inputElementPet1 = document.getElementById('pet1');
-        const inputElementIdade = document.getElementById('idade1');
+        const inputElementpet = document.getElementById('pet');
+        const inputElementIdade = document.getElementById('idade');
         const inputElementEndereco = document.getElementById('endereco');
 
         // Lê o valor do campo de entrada
@@ -107,7 +108,7 @@ function carregarDadosSessaoeAtualiza(usuario) {
         const inputValueCpf = inputElementCpf.value;
         const inputValueTelefone = inputElementTelefone.value;
         const inputValueEmail = inputElementEmail.value;
-        const inputValuePet1 = inputElementPet1.value;
+        const inputValuepet = inputElementpet.value;
         const inputValueIdade = inputElementIdade.value;
         const inputValueEndereco = inputElementEndereco.value;
 
@@ -117,7 +118,7 @@ function carregarDadosSessaoeAtualiza(usuario) {
             cpf: inputValueCpf,
             telefone: inputValueTelefone,
             email: inputValueEmail,
-            pet1: inputValuePet1,
+            pet: inputValuepet,
             idade: inputValueIdade,
             endereco: inputValueEndereco
         };
@@ -125,8 +126,7 @@ function carregarDadosSessaoeAtualiza(usuario) {
         //Chamada Axios para o Backend
         axios.defaults.withCredentials = true;
         axios.post(apiUrlAtualizaCliente, cliente)
-            .then(response => {
-                console.log(JSON.stringify(response));
+            .then(() => {
                 alert('Dados Atualizados com Sucesso!')
                 location.reload();
             })
@@ -160,8 +160,7 @@ function carregarDadosSessaoeAtualiza(usuario) {
         //Chamada Axios para o Backend
         axios.defaults.withCredentials = true;
         axios.post(apiUrlAtualizaWalker, walker)
-            .then(response => {
-                console.log(JSON.stringify(response));
+            .then(() => {
                 alert('Dados Atualizados com Sucesso!')
                 location.reload();
             })

@@ -16,7 +16,6 @@ const postLogin = async (req, res, next) => {
             const id = result.id;
             const obj = { tipo: tipo, id: id, email: email };
             req.session.user = obj;
-            console.log('session obj ' + JSON.stringify(req.session.user))
             req.session.save(function (err) {
                 if (err) return next(err)
                     console.log(err);

@@ -18,7 +18,6 @@ function obterSessao() {
         axios.defaults.withCredentials = true;
         return axios.get(apiUrlSession)
             .then(response => {
-                console.log('Sessao: ' + JSON.stringify(response))
                 return response.data.user;
             })
     } catch (error) {

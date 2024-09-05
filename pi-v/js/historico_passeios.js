@@ -2,7 +2,6 @@ function lerPedidos() {
     document.body.style.visibility = 'visible';
 
     obterSessao().then((user) => {
-        console.log(user)
         const tableBody = document.querySelector('#tb_historico tbody');
         tableBody.innerHTML = '';
 

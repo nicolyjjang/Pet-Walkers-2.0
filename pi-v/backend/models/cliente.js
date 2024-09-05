@@ -20,18 +20,9 @@ const Cliente = db.define('clientes',{
         type: Sequelize.STRING,
         allowNull:false
     },
-    sexo: {
-        type: Sequelize.STRING,
-        allowNull:true,
-        defaultValue: 'Indefinido'
-    },
-    pet1: {
+    pet: {
         type: Sequelize.STRING,
         allowNull:false
-    },
-    pet2:{
-        type: Sequelize.STRING,
-        allowNull:true
     },
     idade:{
         type: Sequelize.INTEGER,

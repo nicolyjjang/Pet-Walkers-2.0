@@ -2,7 +2,6 @@ function lerPedidos() {
     document.body.style.visibility = 'visible';
 
     obterSessao().then((user) => {
-        console.log(user)
         var apiUrlPedido = `${baseUrl}/pedido/${user.id}`;
         axios.get(apiUrlPedido)
             .then(pedidos => {

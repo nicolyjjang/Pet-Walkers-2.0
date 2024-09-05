@@ -85,7 +85,9 @@ document.getElementById('btn-pagamento').addEventListener('click', function (e) 
         },
         errorPlacement: function (error, element) {
             element.before(error);
-        }
+        },
+        errorClass: "error"
+
     });
     if ($("#formPagamento").valid()) {
         efetuarPagamento()

@@ -14,7 +14,8 @@ $("#formContato").validate({
     },
     errorPlacement: function (error, element) {
         error.insertBefore(element);
-    }
+    },
+        errorClass: "error"
 });
 
 document.getElementById('btnEnviar').addEventListener('click', function (e) {
@@ -31,11 +32,8 @@ function enviar() {
     }
 }
 function novidades() {
-    // Obtém o elemento de input pelo ID
     const inputElementName = document.getElementById('nome');
     const inputElementEmail = document.getElementById('email');
-
-    // Lê o valor do campo de entrada
     const inputValueName = inputElementName.value;
     const inputValueEmail = inputElementEmail.value;
 
@@ -43,11 +41,8 @@ function novidades() {
         nome: inputValueName,
         email: inputValueEmail,
     };
-    console.log(novidades)
-    //Chamada Axios para o Backend
     axios.post(apiUrl, novidades)
-        .then(response => {
-            console.log(response.data); // Resposta do servidor
+        .then(() => {
             alert("Dados Enviados com Sucesso");
         })
         .then(() => {

@@ -16,7 +16,7 @@ document.getElementById('btnCadastar').addEventListener('click', function(e){
         telefone: "required",
         cpf: "required",
         senha: "required",
-        pet1: "required",
+        pet: "required",
         idade: "required",
         endereco: "required"
     },
@@ -26,14 +26,15 @@ document.getElementById('btnCadastar').addEventListener('click', function(e){
         telefone: "Favor preencher seu telefone",
         cpf: "Favor preencher seu cpf",
         senha: "Favor preencher sua senha",
-        pet1: "Favor preencher seu pet1",
+        pet: "Favor preencher seu pet",
         idade: "Favor preencher sua idade",
         endereco: "Favor preencher seu endereco",
     },
     errorElement: "div",
     errorPlacement: function(error, element) {
         element.before(error);     
-    }    
+    },
+    errorClass: "error"    
 });
 enviar();
 }, false);
@@ -55,7 +56,7 @@ function cadastrar() {
     const inputElementTelefone = document.getElementById('telefone');
     const inputElementEmail = document.getElementById('email');
     const inputElementSenha = document.getElementById('senha');
-    const inputElementPet1 = document.getElementById('pet1');
+    const inputElementpet = document.getElementById('pet');
     const inputElementIdade = document.getElementById('idade');
     const inputElementEndereco = document.getElementById('endereco');
 
@@ -65,7 +66,7 @@ function cadastrar() {
     const inputValueTelefone = inputElementTelefone.value;
     const inputValueEmail = inputElementEmail.value;
     const inputValueSenha = inputElementSenha.value;
-    const inputValuePet1 = inputElementPet1.value;
+    const inputValuepet = inputElementpet.value;
     const inputValueIdade = inputElementIdade.value;
     const inputValueEndereco = inputElementEndereco.value;
     
@@ -75,14 +76,13 @@ function cadastrar() {
         telefone: inputValueTelefone,
         email: inputValueEmail,
         senha: inputValueSenha,
-        pet1: inputValuePet1,
+        pet: inputValuepet,
         idade: inputValueIdade,
         endereco: inputValueEndereco
     };
     //Chamada Axios para o Backend
     axios.post(apiUrl, cliente)
-        .then(response => {
-            console.log(response.data); // Resposta do servidor
+        .then(() => {
             alert("Dados Enviados com Sucesso");
         })
         .then(()=>{

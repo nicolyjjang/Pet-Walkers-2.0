@@ -22,7 +22,8 @@ document.getElementById('btnEntrar').addEventListener('click', function (e) {
         errorElement: "div",
         errorPlacement: function (error, element) {
             element.before(error);
-        }
+        },
+        errorClass: "error"
     });
     enviar();
 }, false);
@@ -58,7 +59,6 @@ async function login() {
     axios.post(apiUrl, login)
         .then(response => {
             const data = (response.data);
-            console.log(data.id);
             localStorage.clear(); 
             if (data.tipo === 'walker') {
                 window.location.href = `informacoes-pessoais-walker.html`;

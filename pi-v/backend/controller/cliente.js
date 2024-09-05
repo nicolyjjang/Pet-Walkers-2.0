@@ -13,7 +13,6 @@ const getCliente = async (req, res) => {
                 required: true
             }]
         });
-
         if (cliente === null) {
             res.status(500).json({ error: 'Cliente não encontrado' });
         } else {
@@ -27,7 +26,7 @@ const getCliente = async (req, res) => {
 
 const atualizaCliente = async (req, res) => {
     try {
-        const { id, nome_cliente, cpf, telefone, sexo, email, senha, pet1, pet2, idade, endereco } = req.body;
+        const { id, nome_cliente, cpf, telefone, email, pet, idade, endereco } = req.body;
 
         const user = await User.findByPk(id);
         if (user) {
@@ -42,9 +41,7 @@ const atualizaCliente = async (req, res) => {
             cliente.nome_cliente = nome_cliente;
             cliente.cpf = cpf;
             cliente.telefone = telefone;
-            cliente.sexo = sexo;
-            cliente.pet1 = pet1;
-            cliente.pet2 = pet2;
+            cliente.pet = pet;
             cliente.idade = idade;
             cliente.endereco = endereco;
             await cliente.save(); // Salve as alterações no banco de dados
@@ -62,7 +59,7 @@ const atualizaCliente = async (req, res) => {
 
 const postCliente = async (req, res) => {
     try {
-        const { nome_cliente, cpf, telefone, sexo, email, senha, pet1, pet2, idade, endereco } = req.body;
+        const { nome_cliente, cpf, telefone, email, senha, pet, idade, endereco } = req.body;
         const tipo = 'cliente'
         const newUser = await User.create({
             email,
@@ -76,9 +73,7 @@ const postCliente = async (req, res) => {
             nome_cliente,
             cpf,
             telefone,
-            sexo,
-            pet1,
-            pet2,
+            pet,
             idade,
             endereco
         });

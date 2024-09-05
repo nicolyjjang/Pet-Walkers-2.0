@@ -1,6 +1,5 @@
 const nodemailer = require('nodemailer');
 
-// Configuração do transportador do Nodemailer usando Mailtrap
 var transporter = nodemailer.createTransport({
     host: "sandbox.smtp.mailtrap.io",
     port: 2525,
@@ -13,10 +12,10 @@ var transporter = nodemailer.createTransport({
 const sendMail = async (to, subject, text) => {
     try {
         const info = await transporter.sendMail({
-            from: '"Petwalekrs"<no-reply@petwalekrs.com>', // Remetente
-            to, // Destinatário
-            subject, // Assunto
-            text// Corpo do e-mail
+            from: '"Petwalekrs"<no-reply@petwalekrs.com>',
+            to,
+            subject,
+            text
         });
         console.log('Email enviado: %s', info.messageId);
     } catch (error) {

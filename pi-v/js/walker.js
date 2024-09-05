@@ -29,7 +29,8 @@ document.getElementById('btnCadastar').addEventListener('click', function(e){
     errorElement: "div",
     errorPlacement: function(error, element) {
         element.before(error);     
-    }    
+    },
+    errorClass: "error"   
 });
 enviar();
 }, false);
@@ -69,8 +70,6 @@ function cadastrar() {
         senha: inputValueSenha,
         endereco: inputValueEndereco
     };
-    console.log(walker)
-    //Chamada Axios para o Backend
     axios.post(apiUrl, walker)
         .then(response => {
             console.log(response.data); // Resposta do servidor

@@ -1,7 +1,6 @@
 function recuperarDisponibilidade() {
     document.body.style.visibility = 'visible';
     obterSessao().then((user) => {
-        console.log(user)
         var apiUrlDisponibilidade = `${baseUrl}/disponibilidade/${user.id}`;
         axios.get(apiUrlDisponibilidade)
             .then(resultado => {
@@ -63,8 +62,7 @@ function atualizarDisponibilidade(sessaoUsuario) {
     axios.defaults.withCredentials = true;
     var apiUrlAtualizarDisponibilidade = `${baseUrl}/disponibilidade`;
     axios.post(apiUrlAtualizarDisponibilidade, disponibilidade)
-        .then(response => {
-            console.log(JSON.stringify(response));
+        .then(() => {
             alert('Dados Atualizados com Sucesso!')
             location.reload();
         })
