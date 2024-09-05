@@ -71,8 +71,7 @@ function cadastrar() {
         endereco: inputValueEndereco
     };
     axios.post(apiUrl, walker)
-        .then(response => {
-            console.log(response.data); // Resposta do servidor
+        .then(() => {
             alert("Dados Enviados com Sucesso");
         })
         .then(()=>{
