@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets Walkers</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body class="info-pessoais-cliente">
+    <!-- Cabeçalho template-->
+    <header id="header"></header>
+
+    <main>
+        <hr>
+        <section class="cadastro">
+            <h2 class="cadastro-titulo">Cadastro Walker</h2>
+            <form id="formCadastro">
+                <div id="um">
+                    <label class="cadastro-label" for="name">Nome *</label>
+                    <input class="cadastro-input" type="text" id="name" name="name" placeholder="Insira seu nome"
+                        required><br>
+                    <label class="cadastro-label" for="email">E-mail *</label>
+                    <input class="cadastro-input" type="email" id="email" name="email" placeholder="email@gmail.com"
+                        required><br>
+                    <label class="cadastro-label" for="senha">Senha *</label>
+                    <input class="cadastro-input" type="password" id="senha" name="senha" placeholder="********"
+                        required><br>
+                </div>
+
+                <div id="dois">
+                    <label class="cadastro-label" for="cpf">CPF *</label>
+                    <input class="cadastro-input" type="number" id="cpf" name="cpf" placeholder="000000000-00"
+                        required><br>
+                    <label class="cadastro-label" for="telefone">Telefone *</label>
+                    <input class="cadastro-input" type="number" id="telefone" name="telefone"
+                        placeholder="(00) 00000-0000" required><br>
+                    <label class="cadastro-label" for="endereco">Endereço</label>
+                    <input class="cadastro-input" type="text" id="endereco" name="endereco"
+                        placeholder="----------------"><br>
+                </div>
+                <div class="btn-container">
+                    <button class="conteudo-btn6" id="btnCancelar">Cancelar</button>
+                    <button class="conteudo-btn6" id="btnCadastar">Cadastrar</button>
+                </div>
+            </form>
+            <p class="wrapper">* Campos de preenchimento obrigatório</p>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 - Todos os direitos reservados</p>
+        <nav>
+            <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/walker.js"></script>
+</html>

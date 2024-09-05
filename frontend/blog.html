@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets Walkers</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/6539d5b55c.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="info-pessoais-cliente">
+    <!-- Cabeçalho template-->
+    <header id="header"></header>
+    <main>
+        <hr>
+        <h2 class="blog-titulo">Veja o que tem de novo no nosso blog</h2>
+
+        <section class="conteudo-cartao-menor">
+            <div class="conteudo-cartao-pequeno">
+                <img src="./assets/images/blog4.svg" alt="">
+                <h6 class="conteudo-cartao-pequeno-titulo">Proin quis tellus mi</h6>
+                <div class="tempo">
+                    <i class="fa-regular fa-clock"></i>
+                    <p class="cartao-pequeno-escrito">08 nov 2023</p>
+                </div>
+                <br>
+                <p>Sed in metus arcu. Integer molestie risus a arcu sagittis, eu lobortis justo sagittis. Etiam sed
+                    tortor dui.
+                    Quisque ante felis.</p>
+            </div>
+            <div class="conteudo-cartao-pequeno">
+                <img src="./assets/images/blog5.svg" alt="">
+                <h6 class="conteudo-cartao-pequeno-titulo">Ultricies et magna non</h6>
+                <div class="tempo">
+                    <i class="fa-regular fa-clock"></i>
+                    <p class="cartao-pequeno-escrito">30 out 2023</p>
+                </div>
+                <br>
+                <p>Fusce dui mauris, mattis consequat mauris condimentum sagittis. Proin sed mollis risus. Nulla id
+                    malesuada arcu, sed tincidunt tortor.</p>
+            </div>
+            <div class="conteudo-cartao-pequeno">
+                <img src="./assets/images/blog6.svg" alt="">
+                <h6 class="conteudo-cartao-pequeno-titulo">Etiam sed tortor dui</h6>
+                <div class="tempo">
+                    <i class="fa-regular fa-clock"></i>
+                    <p class="cartao-pequeno-escrito">25 out 2023</p>
+                </div>
+                <br>
+                <p>Cras ut sem auctor condimentum, rhoncus sapien in, commodo diam sagittis. Ut iaculis dignissim magna.
+                    Etiam sed tortor dui.</p>
+            </div>
+            <div class="conteudo-setas">
+                <i id="flecha-esquerda" class="fa-solid fa-chevron-left"></i>
+                <i id="flecha-direita" class="fa-solid fa-chevron-right"></i>
+            </div>
+        </section>
+
+        <section class="novidades">
+            <form id="formContato">
+                <h3 class="novidades-titulo">Novidades por e-mail</h3><br>
+                <label class="novidades-label" for="nome">Nome</label>
+                <input class="novidades-input" type="text" id="nome" name="nome" placeholder="Nome">
+                <label class="novidades-label2" for="email">E-mail</label>
+                <input class="novidades-input" type="email" id="email" name="email" placeholder="E-mail"> <br>
+                <button class="conteudo-btn3" id="btnEnviar">Receber novidades</button>
+            </form>
+        </section>
+
+        <section class="conteudo-contato">
+            <img src="./assets/images/cachorro-contato.svg" alt="Cachorro com orelha em pé">
+            <div class="conteudo-contato-escrito">
+                <h4>Entre em contato</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat, leo quis hendrerit dictum,
+                    sapien libero fermentum justo, eget faucibus diam arcu.</p>
+                <h4>Telefone</h4>
+                <p>(15) 97164-2156</p>
+                <h4>E-mail</h4>
+                <p>petwalker@petwalker.com</p>
+            </div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/blog.js"></script>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 - Todos os direitos reservados</p>
+        <nav>
+            <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
