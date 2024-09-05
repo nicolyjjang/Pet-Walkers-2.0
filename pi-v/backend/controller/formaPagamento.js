@@ -17,5 +17,19 @@ const postFormaPagamento = async (req, res) => {
         res.status(500).json({ error: 'Erro ao criar Forma de Pagamento' });
     }
 };
-
-module.exports = postFormaPagamento;
+const getFormasPagamento = async (req, res) => {
+    const id_usuario = req.params.id;
+    try {
+        const formasPagamento = await FormaPagamento.findAll({
+            where: {
+                id_usuario: id_usuario
+            }
+        })
+        console.log(formasPagamento)
+        res.json(formasPagamento)
+    } catch (error) {
+        console.error('Erro ao buscar formas de pagamento por usuário', error);
+        res.status(500).json({ error: 'Erro ao buscar formas de pagamento por usuário' });
+    }
+}
+module.exports = { postFormaPagamento, getFormasPagamento};
