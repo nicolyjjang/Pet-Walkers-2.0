@@ -1,5 +1,6 @@
 var apiUrl = `${baseUrl}/contato`;
 var form = $("#formContato");
+document.body.style.visibility = 'visible';
 $('#divError').empty();
 $("#formContato").validate({
     rules: {

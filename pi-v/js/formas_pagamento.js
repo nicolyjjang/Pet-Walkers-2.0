@@ -1,4 +1,5 @@
 function lerFormasPagamento() {
+    document.body.style.visibility = 'visible';
     obterSessao().then((user) => {
         console.log(user)
         var apiUrlFPagamento = `${baseUrl}/formaPagamento/${user.id}`;

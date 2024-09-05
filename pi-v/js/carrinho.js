@@ -1,6 +1,7 @@
 var apiUrlPedido = `${baseUrl}/pedido/`;
 var apiUrlFormaPagamento = `${baseUrl}/formaPagamento/`;
 var apiUrlincluirPagamento = `${baseUrl}/pagamento/`;
+document.body.style.visibility = 'visible';
 
 // Regras de Tela para Impedir digitação em formatos não permitidos
 document.getElementById('card-number').addEventListener('input', formatarCartaoCredito);

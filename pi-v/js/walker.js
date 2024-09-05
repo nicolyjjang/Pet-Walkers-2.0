@@ -1,5 +1,7 @@
 var apiUrl = `${baseUrl}/walker`;
 var form = $("#formCadastro");
+document.body.style.visibility = 'visible';
+
 document.getElementById('btnCancelar').addEventListener('click', function(e){
     e.preventDefault(); // Impedir o comportamento padrao de recarregar do formulario
     cancelar();

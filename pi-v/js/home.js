@@ -11,6 +11,7 @@ btnsComecarAgora.forEach(btn => {
 function habilitaBotao() {
 obterSessao()
     .then(sessao => {
+        document.body.style.visibility = 'visible';
         if(sessao){
             btnsComecarAgora.forEach(btn => {
                 btn.style.display = 'none';

@@ -1,5 +1,6 @@
 var apiUrl = `${baseUrl}/login/auth`;
 var form = $("#formLogin");
+document.body.style.visibility = 'visible';
 document.getElementById('btnEntrar').addEventListener('click', function (e) {
     e.preventDefault();
     // Validação de radio button customizada

@@ -1,4 +1,5 @@
 function recuperarDisponibilidade() {
+    document.body.style.visibility = 'visible';
     obterSessao().then((user) => {
         console.log(user)
         var apiUrlDisponibilidade = `${baseUrl}/disponibilidade/${user.id}`;

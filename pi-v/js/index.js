@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('header');
     obterSessao().then(sessao => {
         carregarHeader(sessao);
-        document.body.style.visibility = 'visible';
     })
         .catch(error => {
             console.log('Error: ' + error)
