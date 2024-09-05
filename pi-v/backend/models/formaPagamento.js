@@ -2,19 +2,9 @@ const Sequelize = require('sequelize')
 const db = require('../config/db')
 
 const FormaPagamento = db.define('forma_pagamento', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
-    },
     id_usuario: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {
-            model: 'usuarios',
-            key: 'id'
-        }
     },
     tipo: {
         type: Sequelize.STRING,
@@ -22,8 +12,8 @@ const FormaPagamento = db.define('forma_pagamento', {
     },
     numero_cartao: {
         type: Sequelize.STRING,
-        unique: true,
-        allowNull: false
+        allowNull: false,
+        primaryKey: true
     },
     cvv: {
         type: Sequelize.STRING,

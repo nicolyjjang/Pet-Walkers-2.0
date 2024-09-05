@@ -6,7 +6,8 @@ const Pedido = require('./pedido')
 const Pagamento = require('./pagamento')
 const FormaPagamento = require('./formaPagamento')
 const DetalhePedido = require('./detalhePedido')
-const db = { Walker, Cliente, Usuario, Contato, Pedido, Pagamento, FormaPagamento, DetalhePedido }
+const Disponibilidade = require('./disponibilidade')
+const db = { Walker, Cliente, Usuario, Contato, Pedido, Pagamento, FormaPagamento, DetalhePedido, Disponibilidade }
 
 Object.keys(db).forEach(nomeModelo => {
     if (db[nomeModelo].associate) {
@@ -14,19 +15,20 @@ Object.keys(db).forEach(nomeModelo => {
     }
 });
 
-db.Usuario.hasOne(db.Walker, { foreignKey: 'id' });
-db.Walker.belongsTo(db.Usuario, { foreignKey: 'id' });
-db.Usuario.hasOne(db.Cliente, { foreignKey: 'id' });
-db.Cliente.belongsTo(db.Usuario, { foreignKey: 'id' });
-db.Pedido.hasOne(db.Usuario, { foreignKey: 'id' });
-db.Usuario.belongsTo(db.Pedido, { foreignKey: 'id' });
-db.Pagamento.hasOne(db.Pedido, { foreignKey: 'id' });
-db.Pedido.belongsTo(db.Pagamento, { foreignKey: 'id' });
-db.FormaPagamento.hasOne(db.Usuario, { foreignKey: 'id' });
-db.Usuario.belongsTo(db.FormaPagamento, { foreignKey: 'id' });
-db.Pedido.hasMany(db.DetalhePedido, { foreignKey: 'id' });
-db.DetalhePedido.belongsTo(db.Pedido, { foreignKey: 'id' });
-
+db.Usuario.hasOne(db.Walker,{foreignKey:'id'});
+db.Walker.belongsTo(db.Usuario,{foreignKey:'id'});
+db.Usuario.hasOne(db.Cliente,{foreignKey:'id'});
+db.Cliente.belongsTo(db.Usuario,{foreignKey:'id'});
+db.Usuario.hasOne(db.Disponibilidade,{foreignKey:'id'});
+db.Disponibilidade.belongsTo(db.Usuario,{foreignKey:'id'});
+db.Usuario.hasOne(db.Pedido,{foreignKey:'id_usuario'});
+db.Pedido.belongsTo(db.Usuario,{foreignKey:'id_usuario'});
+db.Usuario.hasOne(db.FormaPagamento,{foreignKey:'id_usuario'});
+db.FormaPagamento.belongsTo(db.Usuario,{foreignKey:'id_usuario'});
+db.Pedido.hasOne(db.Pagamento,{foreignKey:'id_pedido'});
+db.Pagamento.belongsTo(db.Pedido,{foreignKey:'id_pedido'});
+db.Pedido.hasMany(db.DetalhePedido,{foreignKey:'id_pedido'});
+db.DetalhePedido.belongsTo(db.Pedido,{foreignKey:'id_pedido'});
 
 db.sequelize = require('../config/db')
 db.Sequelize = require('sequelize')

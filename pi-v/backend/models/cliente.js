@@ -5,11 +5,8 @@ const Cliente = db.define('clientes',{
     id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        references: {
-            model: 'usuarios',
-            key: 'id'
-        }             
+        autoIncrement: false,
+        primaryKey: true,          
     },
     nome_cliente: {
         type: Sequelize.STRING,

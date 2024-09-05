@@ -10,11 +10,7 @@ const DetalhePedido = db.define('detalhe_pedido',{
     },
     id_pedido: {
         type: Sequelize.INTEGER,
-        allowNull:false,
-        references: {
-            model: 'pedidos',
-            key: 'id'
-        }          
+        allowNull:false,        
     },
     valor: { 
         type: Sequelize.INTEGER,

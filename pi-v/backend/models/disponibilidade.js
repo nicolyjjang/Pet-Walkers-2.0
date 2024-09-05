@@ -1,30 +1,33 @@
 const Sequelize = require('sequelize')
 const db = require('../config/db')
 
-const Walker = db.define('walker',{
+const Disponibilidade = db.define('disponibilidade',{
     id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: false,
         primaryKey: true,          
     },
-    nome_tutor: {
+    segunda: {
         type: Sequelize.STRING,
         allowNull:false
     },
-    cpf: {
+    terca: {
         type: Sequelize.STRING,
         allowNull:false
     },
-    telefone:{
+    quarta: {
         type: Sequelize.STRING,
         allowNull:false
     },
-    endereco:{
+    quinta: {
         type: Sequelize.STRING,
-        allowNull:true
-    },    
-
+        allowNull:false
+    },
+    sexta: {
+        type: Sequelize.STRING,
+        allowNull:false
+    }
 })
 
-module.exports = Walker;
+module.exports = Disponibilidade;

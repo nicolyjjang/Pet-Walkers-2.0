@@ -10,11 +10,7 @@ const Pedido = db.define('pedido',{
     },
     id_usuario: {
         type: Sequelize.INTEGER,
-        allowNull:false,
-        references: {
-            model: 'usuarios',
-            key: 'id'
-        }          
+        allowNull:false,       
     },
     valor_total: { 
         type: Sequelize.INTEGER,

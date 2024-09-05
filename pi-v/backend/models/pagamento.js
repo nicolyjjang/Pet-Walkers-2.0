@@ -10,11 +10,7 @@ const Pagamento = db.define('pagamento',{
     },
     id_pedido: {
         type: Sequelize.INTEGER,
-        allowNull:false,
-        references: {
-            model: 'pedidos',
-            key: 'id'
-        }          
+        allowNull:false,       
     },
     numero_cartao: {
         type: Sequelize.STRING,

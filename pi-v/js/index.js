@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
             header.innerHTML = base.concat(`
                 <a href="/informacoes-pessoais-walker.html"><i class="fa-solid fa-user" title="Detalhe de Walker"></i></a>
                 <a href="/logout.html" class="logout-button" onclick="logout()"><i class="fa-solid fa-door-open" title="Sair"></i></a>
-                <a href="carrinho.html"><i id="cart" class="fa-solid fa-cart-shopping"></i></a>    
             `);
         }
         else {
