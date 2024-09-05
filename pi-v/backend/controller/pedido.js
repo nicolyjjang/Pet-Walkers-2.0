@@ -17,10 +17,10 @@ const postPedido = async (req, res) => {
         const detalhePedidoComId = selecionados.map(item => ({
             ...item,        // Mantém os campos existentes
             id_pedido: id,
-            quantidade: 1 
+            quantidade: 1
         }));
         const detalhePedidoRenomeado = detalhePedidoComId.map(item => ({
-            id_pedido: item.id_pedido, 
+            id_pedido: item.id_pedido,
             descricao: item.nome,
             valor: item.preco,
             quantidade: item.quantidade,
@@ -34,4 +34,18 @@ const postPedido = async (req, res) => {
     })
 }
 
-module.exports = postPedido;
+const getPedido = async (req, res) => {
+    const id_usuario = req.params.id;
+    try {
+        const pedidos = await Pedido.findAll({
+            where: {
+                id_usuario: id_usuario
+            }
+        })
+        res.json(pedidos)
+    } catch (error) {
+        console.error('Erro ao buscar pedido por usuáro', error);
+        res.status(500).json({ error: 'Erro ao buscar pedido por usuáro' });
+    }
+}
+module.exports = { postPedido, getPedido };
