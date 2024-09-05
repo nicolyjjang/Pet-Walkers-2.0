@@ -2,14 +2,15 @@ const FormaPagamento = require('../models/formaPagamento');
 
 const postFormaPagamento = async (req, res) => {
     try {
-      const { id_usuario, tipo, numero_cartao, cvv, mes_expiracao, ano_expiracao } = req.body;
+      const { id_usuario, tipo, numero_cartao, cvv, mes_expiracao, ano_expiracao, nome_titular} = req.body;
       const newFormaPagamento = await FormaPagamento.create({
             id_usuario,
             tipo,
             numero_cartao,
             cvv,        
             mes_expiracao,
-            ano_expiracao
+            ano_expiracao,
+            nome_titular
         });
         res.status(201).json(newFormaPagamento); // Retorne o usuário Walker 
     } catch (error) {

@@ -27,6 +27,10 @@ const FormaPagamento = db.define('forma_pagamento', {
         type: Sequelize.STRING,
         allowNull: false,
     },
+    nome_titular: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
 })
 
 module.exports = FormaPagamento;

@@ -6,22 +6,21 @@ const postPagamento = async (req, res) => {
   try {
     console.log('Pagamento: ' + JSON.stringify(req.body))
 
-    const { id_pedido, numero_cartao, cvv, mes_expiracao, ano_expiracao, valor, status } = req.body;
+    const { id_pedido, numero_cartao, cvv, mes_expiracao, ano_expiracao, valor, status, nome_titular } = req.body;
 
     const descricao = 'Pagamento Mock';
-    const titular = 'Fulano de tal';
     const data_expiracao = mes_expiracao + '/' + ano_expiracao;
 
     //Acionar API de pagamentos de teste
     axios.post(MOCKY_URL, {
       valor,
       descricao,
-      titular,
+      nome_titular,
       numero_cartao,
       data_expiracao,
       cvv
     }).then((resposta) => {
-      console.log(resposta.data)
+      console.log('Retorno da API de Pagamentos: ' + resposta.data)
       Pagamento.create({
         id_pedido,
         numero_cartao,
@@ -29,7 +28,8 @@ const postPagamento = async (req, res) => {
         mes_expiracao,
         ano_expiracao,
         valor,
-        status
+        nome_titular,
+        status,
       }).then(response => {
         res.status(200).json(response);
       }).catch(error => {

@@ -64,6 +64,7 @@ document.getElementById('btn-pagamento').addEventListener('click', function (e) 
             card_number: { required: true, cartaoCredito: true },
             expiration_date: { required: true, dataExpiracao: true },
             pagamento: "required",
+            card_holder: "required",
             cvv: { required: true, cvv: true },
         },
         messages: {
@@ -76,6 +77,7 @@ document.getElementById('btn-pagamento').addEventListener('click', function (e) 
                 dataExpiracao: 'Favor preencher no formato MM/YY'
             },
             pagamento: "Favor preencher a forma de pagamento",
+            card_holder: "Favor preencher o nome do titular",
             cvv: {
                 required: "Favor preencher o numero do CVV",
                 cvv: 'Favor preencher no formato 999'
@@ -141,6 +143,7 @@ function gravarPagamento(pedido) {
     const inputElementCardNumber = document.getElementById('card-number');
     const inputElementExpirationDate = document.getElementById('expiration-date');
     const inputElementCVV = document.getElementById('cvv');
+    const inputElementNomeTitular = document.getElementById('card-holder');
     const inputValueCardNumber = inputElementCardNumber.value;
     const inputValueExpirationDate = inputElementExpirationDate.value;
     const inputValueCVV = inputElementCVV.value;
@@ -155,7 +158,8 @@ function gravarPagamento(pedido) {
         mes_expiracao: mesExpiracao,
         ano_expiracao: anoExpiracao,
         valor: pedido.valor_total,
-        status: 'processado'
+        status: 'processado',
+        nome_titular: inputElementNomeTitular
     }
 
     axios.post(apiUrlincluirPagamento, pagamento)
@@ -167,6 +171,7 @@ function gravarPagamento(pedido) {
                 cvv: inputValueCVV,
                 mes_expiracao: mesExpiracao,
                 ano_expiracao: anoExpiracao,
+                nome_titular: inputElementNomeTitular
             };
             tratarFormaDePagamentoCartao(dadosCartao)
         })

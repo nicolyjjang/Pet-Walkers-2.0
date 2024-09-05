@@ -25,20 +25,11 @@ function lerPedidos() {
                                     <td>${pedido.valor_total}</td>
                                 `;
                     tableBody.appendChild(linha);
-                    document.getElementById('profile-email').textContent = user.email;   
-                    //Chamar os endpoints de cliente ou walker para recuperar o nome.                 
-                    if(user.tipo==='cliente'){
-                        var apiUrlCliente = `${baseUrl}/cliente/user/${user.id}`;
-                        axios.get(apiUrlCliente).then( cliente => {
-                            document.getElementById('profile-name').textContent = cliente.data.nome_cliente;
-                        })
-
-                    }else{
-                        var apiUrlWalker = `${baseUrl}/walker/user/${user.id}`;
-                        axios.get(apiUrlWalker).then( walker => {
-                            document.getElementById('profile-name').textContent = walker.data.nome_tutor;
-                        })
-                    }
+                })
+                document.getElementById('profile-email').textContent = user.email;
+                var apiUrlCliente = `${baseUrl}/cliente/user/${user.id}`;
+                axios.get(apiUrlCliente).then(cliente => {
+                    document.getElementById('profile-name').textContent = cliente.data.nome_cliente;
                 })
             }).catch(error => {
                 console.error(error)

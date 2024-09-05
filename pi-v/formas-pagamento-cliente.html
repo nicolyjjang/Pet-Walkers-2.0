@@ -18,10 +18,15 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json"></script>
 
     <script>
         $(document).ready(function() {
-            $('#payment-table').DataTable();
+            $('#payment-table').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json'
+                }
+            });
         });
     </script>
 
@@ -46,7 +51,7 @@
     <main class="informacoes">
         <h1>Formas de Pagamento</h1>
 
-        <table id="payment-table" class="display">
+        <table id="tabela_forma_pagamento" class="display">
             <thead>
                 <tr>
                     <th>Número do Cartão</th>
@@ -61,10 +66,6 @@
         </table>
 
     </main>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>   
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
-    <script src="js/index.js"></script>
-    <script src="js/formas_pagamento.js"></script>
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 - Todos os direitos reservados</p>
@@ -77,5 +78,10 @@
             </ul>
         </nav>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>   
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
+    <script src="js/index.js"></script>
+    <script src="js/formas_pagamento.js"></script>    
 </body>
 </html>

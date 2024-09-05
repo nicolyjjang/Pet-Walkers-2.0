@@ -32,6 +32,10 @@ const Pagamento = db.define('pagamento',{
         type: Sequelize.INTEGER,
         allowNull:false
     },    
+    nome_titular: {
+        type: Sequelize.STRING,
+        allowNull:false        
+    },    
     status: {
         type: Sequelize.STRING,
         allowNull:false        
