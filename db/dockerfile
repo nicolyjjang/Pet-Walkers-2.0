@@ -1,0 +1,8 @@
+# Use a imagem base oficial do MySQL
+FROM mysql:8
+
+# Defina variáveis de ambiente
+ENV MYSQL_ROOT_PASSWORD=password
+ENV MYSQL_DATABASE=pet_walkers
+ENV MYSQL_USER=root
+ENV MYSQL_PASSWORD=password
