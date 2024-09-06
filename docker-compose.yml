@@ -14,11 +14,13 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     environment:
-      - PORT=3000
-      - DB_HOST=mysql
-      - DB_USER=root
-      - DB_PASSWORD=rootpassword
-      - DB_NAME=mydatabase
+      - PORT=${PORT}
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - NODE_ENV=${NODE_ENV}
+      - SESSION_SECRET=${SESSION_SECRET}
     depends_on:
       - mysql
     # O backend não expõe diretamente a sua porta
@@ -36,10 +38,10 @@ services:
   mysql:
     image: mysql:8
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: root
-      MYSQL_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - mysql-data:/var/lib/mysql
     ports:

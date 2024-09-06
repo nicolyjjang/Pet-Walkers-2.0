@@ -12,17 +12,19 @@ const session = require('express-session');
 const sessionStore = require('./config/session');
 const nodeEnv = process.env.NODE_ENV;
 const secret = process.env.SESSION_SECRET;
+const port = process.env.PORT || 3000;
+
 
 // Verifica se o ambiente está apontando para máquina do desenvolvedor
 if (nodeEnv === ('local') || nodeEnv === null) {
     // Verifica se ja existe um database pet_walkers em desenvolvimento local antes de iniciar
     const mysql = require('mysql2/promise');
     mysql.createConnection({
-        user: 'root',
-        password: 'password',
-        host: 'localhost',
-        port: '3306',
-        debug: false
+        debug: false,
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD
     }).then((connection) => {
         connection.query('CREATE DATABASE IF NOT EXISTS pet_walkers;').then(() => {
             sincronizarDB();
@@ -44,7 +46,7 @@ app.use(session({
     store: sessionStore,
     cookie: { secure: false } // Defina como true em produção com HTTPS
 }));
-app.listen(8080, () => {
+app.listen(port, () => {
     console.log("Servidor iniciado na porta 8080: https://localhost:8080");
 });
 function chamarRotas() {
