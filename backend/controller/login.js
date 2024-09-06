@@ -3,7 +3,7 @@ const sessionStore = require('../config/session');
 const { QueryTypes } = require('sequelize');
 
 const postLogin = async (req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8000");  //habilita endereço de servidor frontend
+    res.header("Access-Control-Allow-Origin", "*");  //habilita endereço de servidor frontend
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     try {
         const { email, senha, tipo } = req.body;
@@ -31,7 +31,7 @@ const postLogin = async (req, res, next) => {
 };
 
 const getSession = (req, res) => {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8000"); //habilita endereço de servidor frontend
+    res.header("Access-Control-Allow-Origin", "*"); //habilita endereço de servidor frontend
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");   
 
     if (req.session.user) {
@@ -42,7 +42,7 @@ const getSession = (req, res) => {
 };
 
 const postLogout = async (req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8000");  //habilita endereço de servidor frontend
+    res.header("Access-Control-Allow-Origin", "*");  //habilita endereço de servidor frontend
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     req.session.destroy(err => {

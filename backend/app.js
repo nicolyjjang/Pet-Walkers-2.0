@@ -47,7 +47,7 @@ app.use(session({
     cookie: { secure: false } // Defina como true em produção com HTTPS
 }));
 app.listen(port, () => {
-    console.log("Servidor iniciado na porta 8080: https://localhost:8080");
+    console.log(`Servidor iniciado na porta ${port}: https://localhost:${port}`);
 });
 function chamarRotas() {
     const clienteRoutes = require('./routes/cliente.js');

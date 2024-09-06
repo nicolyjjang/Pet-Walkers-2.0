@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:8080';
+const baseUrl = 'http://localhost:3000';
 const apiUrlSession = `${baseUrl}/login/session`;
 const apiUrlLogout = `${baseUrl}/login/logout`;
 
@@ -26,6 +26,7 @@ function obterSessao() {
 }  
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('header');
+    
     obterSessao().then(sessao => {
         carregarHeader(sessao);
     })
