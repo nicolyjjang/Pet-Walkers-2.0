@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'http://localhost/api';
 const apiUrlSession = `${baseUrl}/login/session`;
 const apiUrlLogout = `${baseUrl}/login/logout`;
 
