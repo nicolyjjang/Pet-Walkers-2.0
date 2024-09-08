@@ -1,6 +1,7 @@
 const Pagamento = require('../models/pagamento');
 const axios = require('axios');
-const MOCKY_URL = 'https://run.mocky.io/v3/e4cbd75a-7513-4e07-ae90-d2273030f3a9'
+require('dotenv').config();
+const MOCKY_URL = process.env.MOCKY_URL;
 
 const postPagamento = async (req, res) => {
   try {
