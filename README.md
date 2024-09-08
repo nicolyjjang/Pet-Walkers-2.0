@@ -55,8 +55,8 @@ Aqui estão algumas capturas de tela que ilustram as principais telas da platafo
 ## Arquitetura do Sistema 💻
 O sistema é composto pelos seguintes componentes:
 - **Frontend**: Desenvolvido com HTML, CSS e JavaScript.
-- **Backend**: 
-- **Banco de Dados**: 
+- **Backend**: Express JS
+- **Banco de Dados**: MySql
 
 ### Colaboradores 🫱🏽‍🫲🏼
 
