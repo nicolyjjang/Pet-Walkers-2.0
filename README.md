@@ -49,8 +49,8 @@ Aqui estão algumas capturas de tela que ilustram as principais telas da platafo
      1. O passo de criação do banco mysql pode resultar em um falso positivo no docker-compose, fazendo com que o container do backend seja criado antes do banco estar realmente pronto.
         Ao consultar a log do container backend, observe que a conexão com o banco foi REFUSED por que o mesmo ainda não estava pronto. 
      ***Contorno: Reiniciar o container do backend após o banco finalizar a construção com um comando **docker-compose up backend*****
-     2. A api de mock de pagamentos pode expirar por alguma politica admnistrativa do serviço designer.mocky.io
-        Neste caso especial o botão de Pagar pode apresentar um erro 500 na log do navegador, que remete a um erro 404 na log do container backend, ao tentar chamar a API que foi deletada.
+     2. A api de mock de pagamentos pode expirar por alguma politica admnistrativa do serviço designer.mocky.io  
+        Neste caso especial o botão de Pagar pode apresentar um erro 500 na log do navegador, que remete a um erro 404 na log do container backend, ao tentar chamar a API que foi deletada.  
      ***Contorno: criar uma nova api no site designer.mocky.io, substituir no parametro MOCKY_URL do arquivo .env e por ultimo reiniciar o container com o comando  **docker-compose up backend*****
         ![mocky](https://github.com/user-attachments/assets/51091280-4e3b-4c21-ba44-56a159d27e1c)
         ![env](https://github.com/user-attachments/assets/7e226962-6539-4d0a-9e06-83638266f84d)
