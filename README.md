@@ -8,7 +8,7 @@
 </p>
 
 ## Descrição 📜
-O **Pet Walkers** é um projeto desenvolvido como parte de um trabalho universitário. O objetivo é criar uma plataforma digital que conecta tutores de pets a cuidadores qualificados para passeios e exercícios físicos. O projeto visa proporcionar uma experiência segura, divertida e enriquecedora para os pets, enquanto oferece praticidade e tranquilidade aos tutores ocupados.
+O **Pet Walkers** é um projeto desenvolvido como parte do Projeto Integrador. O objetivo é criar uma plataforma digital que conecta tutores de pets a cuidadores qualificados para passeios e exercícios físicos. O projeto visa proporcionar uma experiência segura, divertida e enriquecedora para os pets, enquanto oferece praticidade e tranquilidade aos tutores ocupados.
 
 ## Visão Geral 🌟
 A plataforma oferece uma série de funcionalidades que incluem o cadastro de usuários, pesquisa e seleção de cuidadores, agendamento de passeios, avaliações e um sistema de pagamento.
@@ -81,7 +81,7 @@ O sistema é composto pelos seguintes componentes:
 - **Backend**: Express JS
 - **Banco de Dados**: MySql
 
-### Colaboradores 🫱🏽‍🫲🏼
+## Colaboradores 🫱🏽‍🫲🏼
 
 <table align="center">
   <td align="center">
