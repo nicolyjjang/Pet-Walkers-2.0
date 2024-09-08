@@ -19,6 +19,7 @@ services:
       - DB_NAME=${DB_NAME}
       - NODE_ENV=${NODE_ENV}
       - SESSION_SECRET=${SESSION_SECRET}
+      - MOCKY_URL=${MOCKY_URL}
     depends_on:
       mysql:
         condition: service_healthy
