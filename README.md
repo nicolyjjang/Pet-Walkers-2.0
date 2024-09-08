@@ -26,7 +26,7 @@ Aqui estão algumas capturas de tela que ilustram as principais telas da platafo
 ![Home](https://github.com/user-attachments/assets/2b8a2f56-20f0-41fb-aabb-fce8a7630aef)
 
 ### Tela de Carrinho
-![Carrinho](https://github.com/user-attachments/assets/53168779-53e5-41cf-92c7-f223b431aca9)
+![Carrinho](https://github.com/user-attachments/assets/82a69e86-00af-458b-aa37-4e4ff600fc9a)
 
 ### Tela de Logout
 ![Tela - Logout](https://github.com/user-attachments/assets/fe6f3472-26e2-4ace-9f97-3dd536792aeb)
