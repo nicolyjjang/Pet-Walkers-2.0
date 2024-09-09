@@ -41,7 +41,7 @@ Aqui estão algumas capturas de tela que ilustram as principais telas da platafo
 2. Clonar o repositorio do projeto
     - Abra o terminal e execute o comando para clonar o repositório do projeto:
         ```bash
-          git clone [https://github.com/usuario/repo.git](https://github.com/nicolyjjang/Pet-Walkers-2.0.git)
+          git clone https://github.com/nicolyjjang/Pet-Walkers-2.0.git
         ```
   ![Clone](https://github.com/user-attachments/assets/a0f2e913-0226-4f5a-9902-09fba5d484ae)
      
