@@ -41,8 +41,8 @@ Aqui estão algumas capturas de tela que ilustram as principais telas da platafo
 2. Clonar o repositorio do projeto
     - Abra o terminal e execute o comando para clonar o repositório do projeto:
       ```bash
-    git clone [https://github.com/usuario/repo.git](https://github.com/nicolyjjang/Pet-Walkers-2.0.git)
-    ```
+        git clone [https://github.com/usuario/repo.git](https://github.com/nicolyjjang/Pet-Walkers-2.0.git)
+      ```
   ![Clone](https://github.com/user-attachments/assets/a0f2e913-0226-4f5a-9902-09fba5d484ae)
      
 3. Abrir o terminal do sistema operacional
@@ -67,7 +67,7 @@ Aqui estão algumas capturas de tela que ilustram as principais telas da platafo
 ### Considerações Finais - Troubleshooting
 
   **O ambiente pode apresentar algumas situações não controladas que podem precisar de algum tipo de intervenção manual.**
-     1. **Problema:** A criação do banco MySQL pode não ser detectada imediatamente pelo Docker Compose, resultando na criação do container do backend antes que o banco esteja pronto.
+1. **Problema:** A criação do banco MySQL pode não ser detectada imediatamente pelo Docker Compose, resultando na criação do container do backend antes que o banco esteja pronto.
      - **Solução:** Reinicie o container do backend após o banco ter sido construído completamente:
      ```bash
      docker-compose up backend
