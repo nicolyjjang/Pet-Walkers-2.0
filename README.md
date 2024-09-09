@@ -1,11 +1,14 @@
 # Página Web Pet Walkers 🐾
 <p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" width="100" height="35"></a>
   <a href="#"><img src="https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white" alt="HTML" width="100" height="35"></a>
   <a href="#"><img src="https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff" alt="CSS" width="90" height="35"></a>
   <a href="#"><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" width="100" height="35"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" width="100" height="35"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" width="100" height="35"></a>
+  <a href="#"><img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" width="100" height="35"></a>
   <a href="#"><img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="Visual Studio Code" width="125" height="35"></a>
 </p>
+
 
 ## Descrição 📜
 O **Pet Walkers** é um projeto desenvolvido como parte do Projeto Integrador. O objetivo é criar uma plataforma digital que conecta tutores de pets a cuidadores qualificados para passeios e exercícios físicos. O projeto visa proporcionar uma experiência segura, divertida e enriquecedora para os pets, enquanto oferece praticidade e tranquilidade aos tutores ocupados.
