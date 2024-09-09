@@ -40,28 +40,28 @@ Aqui estão algumas capturas de tela que ilustram as principais telas da platafo
      
 2. Clonar o repositorio do projeto
     - Abra o terminal e execute o comando para clonar o repositório do projeto:
-      ```bash
-        git clone [https://github.com/usuario/repo.git](https://github.com/nicolyjjang/Pet-Walkers-2.0.git)
-      ```
+        ```bash
+          git clone [https://github.com/usuario/repo.git](https://github.com/nicolyjjang/Pet-Walkers-2.0.git)
+        ```
   ![Clone](https://github.com/user-attachments/assets/a0f2e913-0226-4f5a-9902-09fba5d484ae)
      
 3. Abrir o terminal do sistema operacional
      
 4. No terminal, navegue até a pasta raiz do projeto
-   ```bash
-    cd .\PetWalkers-2.0\
-    ```
+     ```bash
+      cd .\PetWalkers-2.0\
+      ```
      ![Raiz](https://github.com/user-attachments/assets/a2a960ee-f1c3-4ab9-ba26-420d8ba0a480)
    
 6. Com o docker já em execução no sistema operacional, execute o comando:
-   ```bash
-    docker-compose up -d --build
-    ```
+     ```bash
+      docker-compose up -d --build
+      ```
      ![docker_noar](https://github.com/user-attachments/assets/233b622c-052b-4ab5-bf40-c406f7caf855)
      ![ambiente](https://github.com/user-attachments/assets/8b1a4527-9245-4c90-8c88-25e834db4ec3)
    
 8. Navegar para a página inicial, no browser (navegador):
-   - Acesse http://localhost
+   * Acesse http://localhost
      ![Navegação](https://github.com/user-attachments/assets/4a086076-fcc3-4411-bde1-ececd7f2474c)
    
 ### Considerações Finais - Troubleshooting
@@ -69,14 +69,14 @@ Aqui estão algumas capturas de tela que ilustram as principais telas da platafo
   **O ambiente pode apresentar algumas situações não controladas que podem precisar de algum tipo de intervenção manual.**
 1. **Problema:** A criação do banco MySQL pode não ser detectada imediatamente pelo Docker Compose, resultando na criação do container do backend antes que o banco esteja pronto.
      - **Solução:** Reinicie o container do backend após o banco ter sido construído completamente:
-     ```bash
-     docker-compose up backend
-     ```
+       ```bash
+       docker-compose up backend
+       ```
 2. **Problema:** A API de mock de pagamentos pode expirar devido a políticas administrativas do serviço designer.mocky.io.
    - **Solução:** Se o botão de "Pagar" apresentar um erro 500 no navegador (que remete a um erro 404 na log do container backend), você pode criar uma nova API no site designer.mocky.io, atualizar o parâmetro `MOCKY_URL` no arquivo `.env` e reiniciar o container do backend:
-     ```bash
-     docker-compose up backend
-     ```
+       ```bash
+       docker-compose up backend
+       ```
         ![mocky](https://github.com/user-attachments/assets/51091280-4e3b-4c21-ba44-56a159d27e1c)
         ![env](https://github.com/user-attachments/assets/7e226962-6539-4d0a-9e06-83638266f84d)
 
